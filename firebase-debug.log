@@ -1,0 +1,122 @@
+[debug] [2019-04-17T04:29:56.445Z] ----------------------------------------------------------------------
+[debug] [2019-04-17T04:29:56.455Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-04-17T04:29:56.455Z] CLI Version:   6.6.0
+[debug] [2019-04-17T04:29:56.456Z] Platform:      win32
+[debug] [2019-04-17T04:29:56.456Z] Node Version:  v10.15.2
+[debug] [2019-04-17T04:29:56.458Z] Time:          Wed Apr 17 2019 09:59:56 GMT+0530 (India Standard Time)
+[debug] [2019-04-17T04:29:56.458Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-17T04:29:56.484Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-17T04:29:56.486Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Chathuranga\Desktop\Projects\TransportServices\home
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2019-04-17T04:31:21.171Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-17T04:31:21.172Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-17T04:31:21.796Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T04:31:21.882Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?page_size=100  
+ 
+[debug] [2019-04-17T04:31:28.088Z] <<< HTTP RESPONSE 200
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] +  Database Rules for  have been downloaded to build.
+[info] Future modifications to build will update Database Rules when you run
+[info] firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2019-04-17T04:32:08.819Z] >>> HTTP REQUEST GET https://www.gstatic.com/firebasejs/releases.json  
+ 
+[debug] [2019-04-17T04:32:10.071Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T04:32:10.458Z] Error: ENOENT: no such file or directory, open 'C:\Users\Chathuranga\Desktop\Projects\TransportServices\home\build\index.html'
+    at Object.openSync (fs.js:439:3)
+    at Object.writeFileSync (fs.js:1190:35)
+    at Object.createFileSync (C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:34:6)
+    at Config.writeProjectFile (C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:171:8)
+    at C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:190:18
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-04-17T04:32:32.792Z] ----------------------------------------------------------------------
+[debug] [2019-04-17T04:32:32.801Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-04-17T04:32:32.801Z] CLI Version:   6.6.0
+[debug] [2019-04-17T04:32:32.802Z] Platform:      win32
+[debug] [2019-04-17T04:32:32.802Z] Node Version:  v10.15.2
+[debug] [2019-04-17T04:32:32.804Z] Time:          Wed Apr 17 2019 10:02:32 GMT+0530 (India Standard Time)
+[debug] [2019-04-17T04:32:32.804Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-17T04:32:32.830Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-17T04:32:32.831Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Chathuranga\Desktop\Projects\TransportServices\home
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2019-04-17T04:32:42.933Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?page_size=100  
+ 
+[debug] [2019-04-17T04:32:44.397Z] <<< HTTP RESPONSE 200
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] +  Database Rules for  have been downloaded to home.
+[info] Future modifications to home will update Database Rules when you run
+[info] firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2019-04-17T04:33:08.639Z] >>> HTTP REQUEST GET https://www.gstatic.com/firebasejs/releases.json  
+ 
+[debug] [2019-04-17T04:33:10.995Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T04:33:11.437Z] Error: ENOENT: no such file or directory, open 'C:\Users\Chathuranga\Desktop\Projects\TransportServices\home\build\index.html'
+    at Object.openSync (fs.js:439:3)
+    at Object.writeFileSync (fs.js:1190:35)
+    at Object.createFileSync (C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:34:6)
+    at Config.writeProjectFile (C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:171:8)
+    at C:\Users\Chathuranga\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:190:18
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: An unexpected error has occurred.
