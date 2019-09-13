@@ -8,12 +8,12 @@ class News extends Component{
     render(){
         return(
             <View style={styles.container}>
-            <Header>
+            <Header style={{backgroundColor:"#2196f3"}}>
                 <Left >
-                    <Icon name="menu"  onPress={() =>this.props.navigation.openDrawer()}/>
+                    <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                 </Left>
                 <Right>
-                <Text style={{fontSize:24,fontWeight:"bold"}}>News</Text>
+                <Text style={{fontSize:24, color:"white"}}>News</Text>
                 </Right>
             </Header>
             <Text>News</Text>
