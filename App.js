@@ -4,13 +4,11 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import HomeScreen from './Screens/HomeScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import ShuttleMap from './Screens/ShuttleMap';
-import TimeTable from './Screens/TimeTable';
-import FindHostels from './Screens/FindHostels';
+import Shuttle from "./Screens/components/Shuttle";
 import Parkings from './Screens/Parkings';
 import TaxiSharing from './Screens/TaxiSharing';
 import BuyFoods from './Screens/BuyFoods';
 import NSBMmap from './Screens/NSBMmap';
-import ViewFoods from './Screens/ViewFoods'
 import Login from './Screens/Login'
 import MyAccount from './Screens/MyAccount'
 import { Icon }  from 'native-base';
@@ -49,11 +47,6 @@ const AppDrawerNavigator = createDrawerNavigator({
     }
 
   },
-  TimeTable:{
-      screen:TimeTable,
-      navigationOptions:{
-        drawerLabel: 'Time Table',
-  }},
    LocalMap:{
     screen:NSBMmap,
      navigationOptions:{
@@ -61,10 +54,12 @@ const AppDrawerNavigator = createDrawerNavigator({
         <Iconsi name="md-map" color ={tintColor} size={25} />,
          drawerLabel: 'Local Map',
             }},
-  FindShuttle:{
-    screen:ShuttleMap,
+  Shuttle:{
+    screen:Shuttle,
      navigationOptions:{
      drawerLabel: 'Shuttle',
+         drawerIcon:({tintColor}) =>
+             <Iconsi name="md-bus" color={tintColor} size={25} />
      
 }},
 
@@ -75,9 +70,13 @@ TaxiShare:{
     drawerIcon:({tintColor}) =>
     <Iconsi name="md-car" color={tintColor} size={25} />
 }},
-MyAccount:{
-  screen:MyAccount,
-   },
+        Parkings:{
+            screen:Parkings,
+            navigationOptions:{
+                drawerLabel: 'Parkings',
+                drawerIcon:({tintColor}) =>
+                    <Iconsi name="md-car" color={tintColor} size={25} />
+            }},
 Login:{
   screen:Login,
    navigationOptions:{
