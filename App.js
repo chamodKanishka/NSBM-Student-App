@@ -49,37 +49,31 @@ const AppDrawerNavigator = createDrawerNavigator({
     }
 
   },
+  TimeTable:{
+      screen:TimeTable,
+      navigationOptions:{
+        drawerLabel: 'Time Table',
+  }},
+   LocalMap:{
+    screen:NSBMmap,
+     navigationOptions:{
+      drawerIcon:({tintColor})  =>
+        <Iconsi name="md-map" color ={tintColor} size={25} />,
+         drawerLabel: 'Local Map',
+            }},
   FindShuttle:{
     screen:ShuttleMap,
      navigationOptions:{
-     drawerLabel: 'Find Shuttle',
+     drawerLabel: 'Shuttle',
      
 }},
-TimeTable:{
-  screen:TimeTable,
-   navigationOptions:{
-   drawerLabel: 'Time Table',
-}},
+
 TaxiShare:{
   screen:TaxiSharing,
    navigationOptions:{
    drawerLabel: 'Taxi Sharing',
     drawerIcon:({tintColor}) =>
     <Iconsi name="md-car" color={tintColor} size={25} />
-}},
-  Foods:BuyFoods,
-  Hostals:FindHostels,
-  ParkingSlots:{
-    screen:Parkings,
-     navigationOptions:{
-     drawerLabel: 'Parking',
-}},
-LocalMap:{
-  screen:NSBMmap,
-   navigationOptions:{
-    drawerIcon:({tintColor})  =>
-    <Iconsi name="md-map" color ={tintColor} size={25} />,
-   drawerLabel: 'Local Map',
 }},
 MyAccount:{
   screen:MyAccount,
@@ -89,11 +83,7 @@ Login:{
    navigationOptions:{
    drawerLabel: 'Login',
 }},
-ViewFoods:{
-  screen:ViewFoods,
-   navigationOptions:{
-   drawerLabel: 'View Foods',
-}},
+
 Settings:SettingsScreen,
 },
   {
