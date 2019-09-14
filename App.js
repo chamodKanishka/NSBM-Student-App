@@ -14,6 +14,8 @@ import MyAccount from './Screens/MyAccount'
 import { Icon }  from 'native-base';
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import MyTimtable from "./Screens/MyTimtable";
+import Iconsa from "react-native-vector-icons/AntDesign"
+import Iconf from "react-native-vector-icons/FontAwesome5"
 
 
 const {width} = Dimensions.get('window')
@@ -51,8 +53,9 @@ const AppDrawerNavigator = createDrawerNavigator({
   MyTimetable:{
             screen:MyTimtable,
             navigationOptions:{
+                drawerLabel: 'My Timetable',
                 drawerIcon:({tintColor})  =>
-                    <Iconsi name="md-map" color ={tintColor} size={25} />,
+                    <Iconsa name="table" color ={tintColor} size={25} />,
             }},
    LocalMap:{
     screen:NSBMmap,
@@ -82,7 +85,7 @@ TaxiShare:{
             navigationOptions:{
                 drawerLabel: 'Parkings',
                 drawerIcon:({tintColor}) =>
-                    <Iconsi name="md-car" color={tintColor} size={25} />
+                    <Iconf name="parking" color={tintColor} size={25} />
             }},
 Login:{
   screen:Login,
