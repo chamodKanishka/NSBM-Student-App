@@ -7,7 +7,6 @@ import Icons from 'react-native-vector-icons/Ionicons'
 
 import News from './News';
 import Events from './Events';
-import Profile from './Profile';
 
 class HomeScreen extends Component{
     /*static navigationOptions={
@@ -50,16 +49,6 @@ export default createBottomTabNavigator({
         }
 
     },
-    Profile:{
-        screen:Profile,
-        navigationOptions:{
-            tabBarLabel:"Profile",
-            tabBarIcon:({ tintColor}) => (
-                <Icons name="md-person" color={tintColor} size={24} />
-            )
-        }
-
-    }
 })
 
 

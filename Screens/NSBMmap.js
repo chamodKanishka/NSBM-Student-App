@@ -4,7 +4,6 @@ import { Header, Left, Right, Icon} from 'native-base'
 import Icons from 'react-native-vector-icons/Ionicons'
 import { createBottomTabNavigator } from 'react-navigation'
 import SimpleMode from '../Screens/components/nsbmMap/SimpleMode'
-import CameraMode from '../Screens/components/nsbmMap/CameraMode'
 
 class NSBMmap extends Component{
     static navigationOptions = {
@@ -28,31 +27,8 @@ class NSBMmap extends Component{
         );
     }
 }
-//export default NSBMmap;
+export default SimpleMode;
 
-export default createBottomTabNavigator({
-    
-    SimpleMode:{
-        screen:SimpleMode,
-        navigationOptions:{
-            tabBarLabel:"Find Place",
-            tabBarIcon:({ tintColor}) => (
-                <Icons name="md-browsers" color={tintColor} size={24} />
-            )
-        }
-
-    },
-    CameraMode:{
-        screen:CameraMode,
-        navigationOptions:{
-            tabBarLabel:"Camera Mode",
-            tabBarIcon:({ tintColor}) => (
-                <Icons name="ios-paper" color={tintColor} size={24} />
-            )
-        }
-
-    },
-})
 
 const styles = StyleSheet.create({
     container:{

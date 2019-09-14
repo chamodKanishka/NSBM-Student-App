@@ -47,6 +47,10 @@ class SettingsScreen extends Component{
                         text='Profile'
                         iconName='your-icon-name'
                         onPressCallback={this.navigateToProfile} />
+                    <NavigateRow
+                        text='My E-ID'
+                        iconName='your-icon-name'
+                        onPressCallback={this.navigateToProfile} />
                     <SwitchRow 
                         text='Enable Dark Mode' 
                         iconName='your-icon-name'

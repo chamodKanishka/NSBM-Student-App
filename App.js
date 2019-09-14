@@ -4,7 +4,7 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import HomeScreen from './Screens/HomeScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import ShuttleMap from './Screens/ShuttleMap';
-import Shuttle from "./Screens/components/Shuttle";
+import Shuttle from "./Screens/Shuttle";
 import Parkings from './Screens/Parkings';
 import TaxiSharing from './Screens/TaxiSharing';
 import BuyFoods from './Screens/BuyFoods';
@@ -13,6 +13,7 @@ import Login from './Screens/Login'
 import MyAccount from './Screens/MyAccount'
 import { Icon }  from 'native-base';
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
+import MyTimtable from "./Screens/MyTimtable";
 
 
 const {width} = Dimensions.get('window')
@@ -47,6 +48,12 @@ const AppDrawerNavigator = createDrawerNavigator({
     }
 
   },
+  MyTimetable:{
+            screen:MyTimtable,
+            navigationOptions:{
+                drawerIcon:({tintColor})  =>
+                    <Iconsi name="md-map" color ={tintColor} size={25} />,
+            }},
    LocalMap:{
     screen:NSBMmap,
      navigationOptions:{
