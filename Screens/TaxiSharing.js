@@ -17,12 +17,12 @@ class TaxiSharing extends Component{
     render(){
         return(
             <View style={styles.container}>
-            <Header>
+            <Header style={styles.header}>
                 <Left>
                     <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                 </Left>
                 <Right>
-                <Text style={{fontSize:24,fontWeight:"bold"}}>Taxi Sharing</Text>
+                <Text style={styles.right}>Taxi Sharing</Text>
                 </Right>
             </Header>
             <Text>TaxiSharing</Text>

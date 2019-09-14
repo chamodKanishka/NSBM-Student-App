@@ -8,12 +8,12 @@ class News extends Component{
     render(){
         return(
             <View style={styles.container}>
-            <Header style={{backgroundColor:"#2196f3"}}>
+            <Header style={styles.header}>
                 <Left >
                     <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                 </Left>
                 <Right>
-                <Text style={{fontSize:24, color:"white"}}>News</Text>
+                <Text style={styles.right}>News</Text>
                 </Right>
             </Header>
             <Text>News</Text>
@@ -26,5 +26,12 @@ export default News;
 const styles = StyleSheet.create({
     container:{
         flex:1,
+    },
+    header:{
+        backgroundColor:"#2196f3"
+    },
+    right:{
+        fontSize:24,
+        color:"white"
     }
 });

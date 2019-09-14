@@ -22,12 +22,12 @@ class SimpleMode extends Component{
 
         return(
             <View style={styles.container}>
-            <Header>
+            <Header style={styles.header}>
                 <Left>
                     <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                 </Left>
                 <Right>
-                <Text style={{fontSize:24,fontWeight:"bold"}}>Find Place</Text>
+                <Text style={styles.right}>Find Place</Text>
                 </Right>
             </Header>
             <SearchInput 
@@ -70,5 +70,12 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: '#CCC',
         borderWidth: 1
-      }
+      },
+    header:{
+        backgroundColor:"#2196f3"
+    },
+    right:{
+        fontSize:24,
+        color:"white"
+    }
 });

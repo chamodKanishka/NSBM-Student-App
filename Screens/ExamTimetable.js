@@ -8,12 +8,12 @@ class ExamTimetable extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Header style={{backgroundColor:"#2196f3"}}>
+                <Header style={styles.header}>
                     <Left >
                         <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                     </Left>
                     <Right>
-                        <Text style={{fontSize:24,fontWeight:"bold", color:"white"}}>Timetable</Text>
+                        <Text style={styles.right}>Timetable</Text>
                     </Right>
                 </Header>
                 <Text>Exams</Text>
@@ -26,5 +26,12 @@ export default ExamTimetable;
 const styles = StyleSheet.create({
     container:{
         flex:1,
+    },
+    header:{
+        backgroundColor:"#2196f3"
+    },
+    right:{
+        fontSize:24,
+        color:"white"
     }
 });
