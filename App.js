@@ -13,7 +13,7 @@ import Login from './Screens/Login'
 import MyAccount from './Screens/MyAccount'
 import { Icon }  from 'native-base';
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
-import MyTimtable from "./Screens/MyTimtable";
+import MyTimtable from "./Screens/MyTimetable";
 import Iconsa from "react-native-vector-icons/AntDesign"
 import Iconf from "react-native-vector-icons/FontAwesome5"
 
