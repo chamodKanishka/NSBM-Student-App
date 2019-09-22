@@ -43,12 +43,17 @@ class SettingsScreen extends Component{
             </Header>
             <ReactNativeSettingsPage>
                 <SectionRow text='Usage'>
+                    <Icons name="ios-contact"/>
                     <NavigateRow
                         text='Profile'
-                        iconName='your-icon-name'
+                        iconName='ios-contact'
                         onPressCallback={this.navigateToProfile} />
                     <NavigateRow
                         text='My E-ID'
+                        iconName='your-icon-name'
+                        onPressCallback={this.navigateToProfile} />
+                    <NavigateRow
+                        text='QR-Scanner'
                         iconName='your-icon-name'
                         onPressCallback={this.navigateToProfile} />
                     <SwitchRow 

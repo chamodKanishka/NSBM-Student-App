@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet,ScrollView,Dimensions,Image,TouchableOpacity} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 import SearchInput, { createFilter } from 'react-native-search-filter';
-import emails from './mails';
+import emails from './Location';
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 
 class SimpleMode extends Component{

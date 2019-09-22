@@ -3,15 +3,10 @@ import { StyleSheet ,Text, View, SafeAreaView, ScrollView,Dimensions, Image,Icon
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import HomeScreen from './Screens/HomeScreen';
 import SettingsScreen from './Screens/SettingsScreen';
-import ShuttleMap from './Screens/ShuttleMap';
 import Shuttle from "./Screens/Shuttle";
 import Parkings from './Screens/Parkings';
-import TaxiSharing from './Screens/TaxiSharing';
-import BuyFoods from './Screens/BuyFoods';
 import NSBMmap from './Screens/NSBMmap';
 import Login from './Screens/Login'
-import MyAccount from './Screens/MyAccount'
-import { Icon }  from 'native-base';
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import MyTimtable from "./Screens/MyTimetable";
 import Iconsa from "react-native-vector-icons/AntDesign"
@@ -71,14 +66,6 @@ const AppDrawerNavigator = createDrawerNavigator({
          drawerIcon:({tintColor}) =>
              <Iconsi name="md-bus" color={tintColor} size={25} />
      
-}},
-
-TaxiShare:{
-  screen:TaxiSharing,
-   navigationOptions:{
-   drawerLabel: 'Taxi Sharing',
-    drawerIcon:({tintColor}) =>
-    <Iconsi name="md-car" color={tintColor} size={25} />
 }},
         Parkings:{
             screen:Parkings,

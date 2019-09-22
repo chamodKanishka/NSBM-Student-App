@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, T
 
 import bgImage from '../images/background.jpg'
 import logo from '../images/logos.png'
+import News from '../Screens/News'
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
@@ -30,7 +31,7 @@ class Login extends Component {
             underlineColorAndroid='transparent'
           />
         </View>
-        <TouchableOpacity style={styles.btnLogin} onPress={() =>this.props.navigation.navigate('Settings')}>
+        <TouchableOpacity style={styles.btnLogin} onPress={() =>this.props.navigation.navigate("News", {screen:News})}>
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
       </ImageBackground>
