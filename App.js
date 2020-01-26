@@ -6,7 +6,8 @@ import SettingsScreen from './Screens/SettingsScreen';
 import Shuttle from "./Screens/Shuttle";
 import Parkings from './Screens/Parkings';
 import NSBMmap from './Screens/NSBMmap';
-import Login from './Screens/Login'
+import Login from './Screens/Login';
+import QrcodeScanner from "./Screens/components/Settings/QrcodeScanner";
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import MyTimtable from "./Screens/MyTimetable";
 import Iconsa from "react-native-vector-icons/AntDesign"
@@ -74,11 +75,16 @@ const AppDrawerNavigator = createDrawerNavigator({
                 drawerIcon:({tintColor}) =>
                     <Iconf name="parking" color={tintColor} size={25} />
             }},
-Login:{
-  screen:Login,
-   navigationOptions:{
-   drawerLabel: 'Login',
-}},
+        Login:{
+          screen:Login,
+           navigationOptions:{
+           drawerLabel: 'Login',
+        }},
+        QrcodeScanner:{
+            screen:QrcodeScanner,
+            navigationOptions:{
+                drawerLabel: 'QrScanner',
+            }},
 
 Settings:SettingsScreen,
 },
