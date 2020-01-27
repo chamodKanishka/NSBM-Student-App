@@ -9,6 +9,7 @@ import NSBMmap from './Screens/NSBMmap';
 import Login from './Screens/Login';
 import QrcodeScanner from "./Screens/components/Settings/QrcodeScanner";
 import MyEid from "./Screens/components/Settings/MyEid";
+import Profile from "./Screens/Profile";
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import MyTimtable from "./Screens/MyTimetable";
 import Iconsa from "react-native-vector-icons/AntDesign"
@@ -90,6 +91,11 @@ const AppDrawerNavigator = createDrawerNavigator({
             screen:MyEid,
             navigationOptions:{
                 drawerLabel: 'My E-ID',
+            }},
+        Profile:{
+            screen:Profile,
+            navigationOptions:{
+                drawerLabel: 'Profile',
             }},
 
 Settings:SettingsScreen,

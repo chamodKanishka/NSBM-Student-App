@@ -25,7 +25,7 @@ class MyEid extends Component{
                 <QRCode
                     value={this.state.text}
                     size={300}
-                    bgColor='black'
+                    bgColor='#2879fe'
                     fgColor='white'/>
             </View>
 

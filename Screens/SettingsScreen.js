@@ -68,7 +68,7 @@ class SettingsScreen extends Component{
                         _value={this.state.switch}
                         _onValueChange={() => { this.setState({ switch: !this.state.switch }) }} />
                     <CheckRow 
-                        text='Check Row'
+                        text='Hide My Details'
                         iconName='your-icon-name'
                         _color='#000'
                         _value={this.state.check}

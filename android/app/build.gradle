@@ -139,6 +139,9 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-fs')
+    implementation project(':react-native-image-resizer')
+    implementation project(':react-native-image-picker')
     implementation project(':react-native-cardview')
     implementation project(':react-native-android-location-services-dialog-box')
     implementation project(':react-native-maps')
