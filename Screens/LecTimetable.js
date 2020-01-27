@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import{View, Text, StyleSheet} from "react-native";
+import{View, Text, StyleSheet,WebView} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 
 class LecTimetable extends Component{
@@ -16,7 +16,10 @@ class LecTimetable extends Component{
                         <Text style={styles.right}>Timetable</Text>
                     </Right>
                 </Header>
-                <Text>Lectures</Text>
+                <WebView
+                    source = {{ uri:
+                            'https://docs.google.com/spreadsheets/d/1e7z2sxXT1WcK0iH8iQwRUjQpLULEd_tvtO7C1tJ9gFY/edit#gid=806617593' }}
+                />
             </View>
         );
     }
@@ -26,6 +29,7 @@ export default LecTimetable;
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        height: 350,
     },
     header:{
         backgroundColor:"#2196f3"

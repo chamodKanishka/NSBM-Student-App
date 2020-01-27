@@ -38,6 +38,7 @@
     "react-native-simple-radio-button": "^2.7.3",
     "react-native-table-component": "^1.2.0",
     "react-native-vector-icons": "^6.4.2",
+    "react-native-webview": "^8.0.5",
     "react-navigation": "^2.6.2",
     "react-navigation-stack": "^1.2.0",
     "react-viro": "2.15.0",
