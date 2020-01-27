@@ -8,6 +8,7 @@ import Parkings from './Screens/Parkings';
 import NSBMmap from './Screens/NSBMmap';
 import Login from './Screens/Login';
 import QrcodeScanner from "./Screens/components/Settings/QrcodeScanner";
+import MyEid from "./Screens/components/Settings/MyEid";
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import MyTimtable from "./Screens/MyTimetable";
 import Iconsa from "react-native-vector-icons/AntDesign"
@@ -84,6 +85,11 @@ const AppDrawerNavigator = createDrawerNavigator({
             screen:QrcodeScanner,
             navigationOptions:{
                 drawerLabel: 'QrScanner',
+            }},
+        MyEid:{
+            screen:MyEid,
+            navigationOptions:{
+                drawerLabel: 'My E-ID',
             }},
 
 Settings:SettingsScreen,

@@ -4,35 +4,24 @@ import { CameraKitCameraScreen, } from 'react-native-camera-kit';
 
 class QrcodeScanner extends Component {
     constructor() {
-
         super();
-
         this.state = {
-
             QR_Code_Value: '',
-
             Start_Scanner: false,
-
         };
     }
 
     openLink_in_browser = () => {
-
         Linking.openURL(this.state.QR_Code_Value);
-
     }
 
     onQR_Code_Scan_Done = (QR_Code) => {
-
         this.setState({ QR_Code_Value: QR_Code });
-
         this.setState({ Start_Scanner: false });
     }
 
     open_QR_Code_Scanner=()=> {
-
         var that = this;
-
         if (Platform.OS === 'android') {
             async function requestCameraPermission() {
                 try {
@@ -66,7 +55,7 @@ class QrcodeScanner extends Component {
             return (
                 <View style={styles.MainContainer}>
 
-                    <Text style={{ fontSize: 22, textAlign: 'center' }}>React Native Scan QR Code Example</Text>
+                    <Text style={{ fontSize: 22, textAlign: 'center' }}>Click button to start scan</Text>
 
                     <Text style={styles.QR_text}>
                         {this.state.QR_Code_Value ? 'Scanned QR Code: ' + this.state.QR_Code_Value : ''}
@@ -84,7 +73,7 @@ class QrcodeScanner extends Component {
                         onPress={this.open_QR_Code_Scanner}
                         style={styles.button}>
                         <Text style={{ color: '#FFF', fontSize: 14 }}>
-                            Open QR Scanner
+                            Start
                         </Text>
                     </TouchableOpacity>
 
