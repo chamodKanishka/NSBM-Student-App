@@ -9,7 +9,9 @@ import ReactNativeSettingsPage, {
     SwitchRow,
     SliderRow
 } from 'react-native-settings-page';
-import MyAccount from './MyAccount';
+import Profile from "./Profile";
+import MyEid from "./components/Settings/MyEid";
+import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
 class SettingsScreen extends Component{
 
@@ -27,7 +29,15 @@ class SettingsScreen extends Component{
 
     navigateToProfile = () => {
         const { navigation } = this.props
-        navigation.navigate('MyAccount');
+        navigation.navigate('Profile');
+    }
+    navigateToMyEid = () => {
+        const { navigation } = this.props
+        navigation.navigate('MyEid');
+    }
+    navigateToQrScanner = () => {
+        const { navigation } = this.props
+        navigation.navigate('QrcodeScanner');
     }
     
     render(){
@@ -51,9 +61,13 @@ class SettingsScreen extends Component{
                     <NavigateRow
                         text='My E-ID'
                         iconName='your-icon-name'
-                        onPressCallback={this.navigateToProfile} />
+                        onPressCallback={this.navigateToMyEid} />
                     <NavigateRow
                         text='QR-Scanner'
+                        iconName='your-icon-name'
+                        onPressCallback={this.navigateToQrScanner} />
+                    <NavigateRow
+                        text='Sign My University'
                         iconName='your-icon-name'
                         onPressCallback={this.navigateToProfile} />
                     <SwitchRow 

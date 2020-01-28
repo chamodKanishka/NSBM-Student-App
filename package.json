@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@cawfree/react-native-lottie-files-picker": "^1.0.9",
     "firebase": "^5.9.4",
     "native-base": "^2.12.1",
     "react": "16.8.3",
