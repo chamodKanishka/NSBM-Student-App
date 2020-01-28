@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet,Image} from "react-native";
 import { Header, Left, Right,Center, Icon} from 'native-base'
 import PhotoUpload from "react-native-photo-upload";
+import  Icons  from 'react-native-vector-icons/Ionicons'
+import SettingsScreen from "./SettingsScreen";
 class Profile extends Component{
     render(){
         return(
             <View style={styles.container}>
             <Header style={{backgroundColor:"green"}}>
                 <Left>
-                    <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
+                    <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
                    
                 </Left>
                 <Right>
