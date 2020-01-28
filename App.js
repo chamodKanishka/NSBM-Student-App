@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet ,Text, View, SafeAreaView, ScrollView,Dimensions, Image,Icons} from 'react-native';
+import { StyleSheet ,Text, View, SafeAreaView, ScrollView,Dimensions, Image,Icons, TouchableOpacity} from 'react-native';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import HomeScreen from './Screens/HomeScreen';
 import SettingsScreen from './Screens/SettingsScreen';
@@ -28,8 +28,10 @@ export default class App extends React.Component{
 
 const CustomDrawerComponent = (props) =>(
   <SafeAreaView style={{flex: 1}}>
-  <View style={{ height:150, backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
+  <View  style={{ height:150, backgroundColor:'lightblue', alignItems:'center', justifyContent:'center'}}>
+      <TouchableOpacity onPress={() =>this.props.navigation.navigate("Profile", {screen:Profile})}>
   <Image source={require('./images/logo.png')} style={{ height:120, width:120, borderRadius:60}}/>
+      </TouchableOpacity>
   </View>
   <ScrollView>
     <DrawerItems {...props}/>
