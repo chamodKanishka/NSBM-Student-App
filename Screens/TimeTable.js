@@ -168,11 +168,11 @@ export default First_2_Tabs;
 
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        alignItems:'stretch',
-        ...StyleSheet.absoluteFillObject,
-    },
+    // container:{
+    //     flex:1,
+    //     alignItems:'stretch',
+    //     ...StyleSheet.absoluteFillObject,
+    // },
     Tabs: {
         ...StyleSheet.absoluteFillObject,
         marginTop:100,

@@ -11,7 +11,7 @@ class Profile extends Component{
             <Header style={{backgroundColor:"green"}}>
                 <Left>
                     <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
-                   
+
                 </Left>
                 <Right>
                 <Text style={{fontSize:24,fontWeight:"bold", color:"white"}}>Profile</Text>
@@ -41,11 +41,11 @@ class Profile extends Component{
                  </PhotoUpload>
                 </View>
                 <View style={{marginLeft:20,}}>
-                <Text style={{fontSize:20, fontWeight:'700',marginBottom:30}}>Name:</Text>
-                <Text style={{fontSize:20, fontWeight:'700',marginBottom:30}}>Contact No:</Text>
-                <Text style={{fontSize:20, fontWeight:'700',marginBottom:30}}>Email:</Text>
-                <Text style={{fontSize:20, fontWeight:'700',marginBottom:30}}>Degree:</Text>
-                <Text style={{fontSize:20, fontWeight:'700',marginBottom:30}}>Batch:</Text>
+                <Text style={styles.label}>Name:</Text>
+                <Text style={styles.label}>Contact No:</Text>
+                <Text style={styles.label}>Email:</Text>
+                <Text style={styles.label}>Degree:</Text>
+                <Text style={styles.label}>Batch:</Text>
             </View>
             </View>
         );
@@ -57,4 +57,9 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
     },
+    label:{
+        fontSize:20,
+        fontWeight:700,
+        marginBottom:30
+    }
 });
