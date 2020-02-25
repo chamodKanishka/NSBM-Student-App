@@ -4,9 +4,14 @@ import { Header, Left, Right, Icon} from 'native-base'
 import Icons from 'react-native-vector-icons/Ionicons'
 import Iconses from 'react-native-vector-icons/FontAwesome'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapViewDirections from "react-native-maps-directions";
 import Permissions from 'react-native-permissions';
 import LocationServicesDialogBox from 'react-native-android-location-services-dialog-box';
 
+
+const origin = {latitude: 6.8211, longitude: 80.0409};
+const destination = {latitude: 6.839596, longitude: 79.978111};
+const GOOGLE_MAPS_APIKEY = 'AIzaSyDPSp37X3waDDvB0X6-GXHOJdnREHsJHyY';
 
 export async function requestLocationPermission()
 {
@@ -14,7 +19,7 @@ export async function requestLocationPermission()
         const granted = await PermissionsAndroid.request(
             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
             {
-                'title':'NSBM App',
+                'title':'NSBM Student App',
                 'message':'NSBM App need to access of your location for better expirience'
             }
         )
@@ -26,12 +31,12 @@ export async function requestLocationPermission()
             console.log("location permission denied")
             alert("Location permission denied");
         }
-        
+
     }
     catch(err){
         console.warn(err)
     }
-    
+
 }
 class ShuttleMap extends Component{
 
@@ -40,7 +45,7 @@ class ShuttleMap extends Component{
             <Iconses name="bus" style = {{ fontSize:23, color:tintColor}}/>
         )
     }
-    
+
     async componentWillMount(){
         await requestLocationPermission()
     }
@@ -60,7 +65,7 @@ class ShuttleMap extends Component{
             preventBackClick: false, //true => To prevent the location services popup from closing when it is clicked back button
             providerListener: false // true ==> Trigger "locationProviderStatusChange" listener when the location state changes
         }).then(function(success) {
-            // success => {alreadyEnabled: true, enabled: true, status: "enabled"} 
+            // success => {alreadyEnabled: true, enabled: true, status: "enabled"}
                 navigator.geolocation.getCurrentPosition((position) => {
                     let initialPosition = JSON.stringify(position);
                     this.setState({ initialPosition });
@@ -69,12 +74,12 @@ class ShuttleMap extends Component{
         ).catch((error) => {
             console.log(error.message);
         });
-        
+
         DeviceEventEmitter.addListener('locationProviderStatusChange', function(status) { // only trigger when "providerListener" is enabled
             console.log(status); //  status => {enabled: false, status: "disabled"} or {enabled: true, status: "enabled"}
         });
     }
-    
+
     componentWillUnmount() {
         // used only when "providerListener" is enabled
         LocationServicesDialogBox.stopListener(); // Stop the "locationProviderStatusChange" listener.
@@ -103,6 +108,13 @@ class ShuttleMap extends Component{
                  longitudeDelta: 0.0121,
                                      }}
                                  >
+                <MapViewDirections
+                    origin={origin}
+                    destination={destination}
+                    apikey={GOOGLE_MAPS_APIKEY}
+                    strokeWidth={4}
+                    strokeColor="lightblue"
+                />
              </MapView>
 
             </View>
@@ -119,11 +131,11 @@ const styles = StyleSheet.create({
       //justifyContent:,
       alignItems:'stretch',
       ...StyleSheet.absoluteFillObject,
-      
+
     },
     map: {
       ...StyleSheet.absoluteFillObject,
-      marginTop:100,
+      marginTop:50,
       marginBottom:50,
     },
    });
