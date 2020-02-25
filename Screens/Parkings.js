@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import{View, Text, StyleSheet} from "react-native";
-import { Header, Left, Right, Icon} from 'native-base'
+import { Header, Left, Right, Icon} from 'native-base';
+import CardView from 'react-native-cardview';
 
 class Parking extends Component{
     render(){
@@ -14,7 +15,19 @@ class Parking extends Component{
                 <Text style={styles.right}>Parking</Text>
                 </Right>
             </Header>
-            <Text>Parking</Text>
+                <View style={styles.MainContainer}>
+
+                    <CardView
+                        cardElevation={5}
+                        cardMaxElevation={5}
+                        cornerRadius={5}
+                        style={styles.cardViewStyle}>
+
+                        <Text style={styles.cardView_InsideText}> Simple CardView </Text>
+
+                    </CardView>
+
+                </View>
             </View>
         );
     }
@@ -31,5 +44,29 @@ const styles = StyleSheet.create({
     right:{
         fontSize:24,
         color:"white"
+    },
+    MainContainer: {
+
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+
+    cardViewStyle:{
+
+        width: 250,
+        height: 150,
+
+    },
+
+    cardView_InsideText:{
+
+        fontSize: 20,
+        color: '#000',
+        textAlign: 'center',
+        marginTop: 50
+
     }
 });

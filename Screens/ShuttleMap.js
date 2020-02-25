@@ -10,7 +10,9 @@ import LocationServicesDialogBox from 'react-native-android-location-services-di
 
 
 const origin = {latitude: 6.8211, longitude: 80.0409};
-const destination = {latitude: 6.839596, longitude: 79.978111};
+const waypoints ={latitude:6.9021, longitude:79.9195};
+const destination = {latitude: 6.9093, longitude: 79.8967};
+const mode = "DRIVING";
 const GOOGLE_MAPS_APIKEY = 'AIzaSyDPSp37X3waDDvB0X6-GXHOJdnREHsJHyY';
 
 export async function requestLocationPermission()
@@ -110,7 +112,9 @@ class ShuttleMap extends Component{
                                  >
                 <MapViewDirections
                     origin={origin}
+                    waypoints={waypoints}
                     destination={destination}
+                    mode={mode}
                     apikey={GOOGLE_MAPS_APIKEY}
                     strokeWidth={4}
                     strokeColor="lightblue"

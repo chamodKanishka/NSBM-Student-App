@@ -18,7 +18,7 @@
     "react-native-autocomplete-input": "^4.1.0",
     "react-native-button": "^2.4.0",
     "react-native-camera-kit": "^8.0.4",
-    "react-native-cardview": "^2.0.2",
+    "react-native-cardview": "^2.0.5",
     "react-native-dark-mode": "^0.2.2",
     "react-native-gesture-handler": "^1.1.0",
     "react-native-gifted-chat": "^0.9.11",
