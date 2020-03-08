@@ -9,7 +9,9 @@ import HomeScreen from './HomeScreen'
 import Shuttle from './Shuttle'
 import SettingsScreen from './SettingsScreen'
 import MyTimetable from './MyTimetable'
+import LectureMaterials from './LectureMaterials'
 import Iconsa from "react-native-vector-icons/AntDesign"
+import Iconu from "react-native-vector-icons/Entypo"
 
 // function HomeScreens({ navigation }) {
 //     return (
@@ -51,6 +53,13 @@ export default function Menu() {
              options={{
               drawerIcon:({tintColor})  =>
               <Iconsa name="table" color ={tintColor} size={25} />
+            }}/>
+
+            <Drawer.Screen name="Lecture Materials"
+             component={LectureMaterials}
+             options={{
+              drawerIcon:({tintColor})  =>
+              <Iconu name="text-document" color ={tintColor} size={25} />
             }}/>
             
             
