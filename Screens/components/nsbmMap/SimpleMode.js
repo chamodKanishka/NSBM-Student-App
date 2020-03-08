@@ -35,7 +35,7 @@ class SimpleMode extends Component{
             <SearchInput 
                 onChangeText={(term) => { this.searchUpdated(term) }}
                 clearIcon={this.state.searchTerm!==''&&<Icons name="format-clear"/>}
-                clearIconViewStyles={{position:'absolute',top: 18,right: 12}}
+                clearIconViewStyles={{position:'absolute',top: 18,right: 32}}
                 fuzzy={true} 
                 sortResults={true}
                 style={styles.searchInput}

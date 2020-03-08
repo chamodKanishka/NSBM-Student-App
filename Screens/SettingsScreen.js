@@ -13,6 +13,7 @@ import ReactNativeSettingsPage, {
 // import MyEid from "./components/Settings/MyEid";
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
+
 class SettingsScreen extends Component{
 
     static navigationOptions = {

@@ -5,6 +5,9 @@ import bgImage from '../images/background.jpg'
 import logo from '../images/logos.png'
 import Menu from './Menu'
 import HomeScreen from './HomeScreen';
+import Icon from 'react-native-vector-icons/Ionicons'
+import Icons from 'react-native-vector-icons/AntDesign'
+import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
@@ -16,6 +19,8 @@ class Login extends Component {
                     <Text style={styles.logoText}>NSBM STUDENT APP</Text>
                 </View>
                 <View style={styles.inputContainer}>
+                    <Icons name={'user'} size={24} color={'rgba(255,255,255,0.7)'}
+                     style={styles.inputIcon}></Icons>
                     <TextInput
                         style={styles.input}
                         placeholder={'Username'}
@@ -24,6 +29,8 @@ class Login extends Component {
                     />
                 </View>
                 <View style={styles.inputContainer}>
+                <Iconsi name={'textbox-password'} size={24} color={'rgba(255,255,255,0.7)'}
+                     style={styles.inputIcon}></Iconsi>
                     <TextInput
                         style={styles.input}
                         placeholder={'Password'}
@@ -67,6 +74,12 @@ const styles = StyleSheet.create({
     },
     inputContainer:{
         marginTop: 10
+
+    },
+    inputIcon:{
+        position: 'absolute',
+        top:8,
+        left:40
 
     },
     input: {
