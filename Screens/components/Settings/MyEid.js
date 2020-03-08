@@ -1,7 +1,7 @@
-'use strict';
 
 import React, { Component } from "react";
 import QRCode from 'react-native-qrcode';
+import { WebView } from 'react-native-webview'
 import {
     AppRegistry,
     StyleSheet,
@@ -17,6 +17,7 @@ class MyEid extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <WebView>
                 <TextInput
                     style={styles.input}
                     onChangeText={(text) => this.setState({text: text})}
@@ -27,6 +28,7 @@ class MyEid extends Component{
                     size={300}
                     bgColor='#2879fe'
                     fgColor='white'/>
+                </WebView>
             </View>
 
         );

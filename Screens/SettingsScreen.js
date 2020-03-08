@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import{View, Text, StyleSheet} from "react-native";
-import Icons from 'react-native-vector-icons/Ionicons'
+import Icons from 'react-native-vector-icons/Ionicons';
 import { Header, Left, Right, Icon} from 'native-base'
 import ReactNativeSettingsPage, { 
     SectionRow, 
@@ -9,8 +9,8 @@ import ReactNativeSettingsPage, {
     SwitchRow,
     SliderRow
 } from 'react-native-settings-page';
-// import Profile from "./Profile";
-// import MyEid from "./components/Settings/MyEid";
+//import Profile from "./Profile";
+import { NavigationContainer } from '@react-navigation/native';
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
 
