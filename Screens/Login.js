@@ -38,6 +38,10 @@ class Login extends Component {
                         placeholderTextColor={'rgba(255,255,255,0.7)'}
                         underlineColorAndroid='transparent'
                     />
+
+                    <TouchableOpacity style={styles.btnEye}>
+                        <Icon name={'ios-eye'} size={26} color={'rgba(255,255,255,0.5)'} />
+                    </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Menu", {screen:Menu})}>
                     <Text style={styles.text}>Login</Text>
@@ -107,6 +111,11 @@ const styles = StyleSheet.create({
         fontSize:16,
         textAlign: 'center'
 
+    },
+    btnEye:{
+        position:'absolute',
+        top: 8,
+        right: 37
     }
 
 
