@@ -3,6 +3,7 @@ import{View, Text, StyleSheet,ScrollView,Dimensions,Image,TouchableOpacity} from
 import { Header, Left, Right, Icon} from 'native-base'
 import SearchInput, { createFilter } from 'react-native-search-filter';
 import emails from './Location';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 
 class SimpleMode extends Component{
@@ -16,6 +17,7 @@ class SimpleMode extends Component{
       searchUpdated(term) {
         this.setState({ searchTerm: term })
       }
+      
 
     render(){
         const filteredEmails = emails.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
@@ -31,9 +33,14 @@ class SimpleMode extends Component{
                 </Right>
             </Header>
             <SearchInput 
-                onChangeText={(term) => { this.searchUpdated(term) }} 
+                onChangeText={(term) => { this.searchUpdated(term) }}
+                clearIcon={this.state.searchTerm!==''&&<Icons name="format-clear"/>}
+                clearIconViewStyles={{position:'absolute',top: 18,right: 12}}
+                fuzzy={true} 
+                sortResults={true}
                 style={styles.searchInput}
                 placeholder="Type here to search"
+                caseSensitive="true"
                 />
                 <ScrollView>
                 {filteredEmails.map(email => {

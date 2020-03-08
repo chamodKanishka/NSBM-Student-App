@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet} from "react-native";
 import { Header, Left, Right, Icon,Font} from 'native-base'
 
-import { createBottomTabNavigator } from 'react-navigation'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icons from 'react-native-vector-icons/Ionicons'
 
 import News from './News';
 import Events from './Events';
+
+
+const Tab = createMaterialBottomTabNavigator();
+
 
 class HomeScreen extends Component{
     /*static navigationOptions={
@@ -16,49 +20,61 @@ class HomeScreen extends Component{
     }*/
     render(){
         return(
-            <View style={styles.container}>
-            <Header>
-                <Left>
-                    
-                </Left>
-            </Header>
-            <Text>HomeScreen</Text>
-            </View>
+            <Tab.Navigator>
+            <Tab.Screen 
+            name="News" 
+            component={News}
+            options={{
+                tabBarLabel:"News",
+                tabBarIcon:({ tintColor}) => (
+                    <Icons name="md-browsers" color={tintColor} size={24} />
+                )
+            }} />
+            <Tab.Screen 
+            name="Events" 
+            component={Events} 
+            options={{
+                tabBarLabel:"Events",
+                tabBarIcon:({ tintColor}) => (
+                    <Icons name="ios-paper" color={tintColor} size={24} />
+                )
+            }}/>
+            </Tab.Navigator>
         );
     }
 }
-/*export default HomeScreen;*/
-export default createBottomTabNavigator({
-    News:{
-        screen:News,
-        navigationOptions:{
-            tabBarLabel:"News",
-            tabBarIcon:({ tintColor}) => (
-                <Icons name="md-browsers" color={tintColor} size={24} />
-            )
-        }
+export default HomeScreen;
+// export default createBottomTabNavigator({
+//     News:{
+//         screen:News,
+        // navigationOptions:{
+        //     tabBarLabel:"News",
+        //     tabBarIcon:({ tintColor}) => (
+        //         <Icons name="md-browsers" color={tintColor} size={24} />
+        //     )
+        // }
 
-    },
-    Events:{
-        screen:Events,
-        navigationOptions:{
-            tabBarLabel:"Events",
-            tabBarIcon:({ tintColor}) => (
-                <Icons name="ios-paper" color={tintColor} size={24} />
-            )
-        }
+//     },
+//     Events:{
+//         screen:Events,
+        // navigationOptions:{
+        //     tabBarLabel:"Events",
+        //     tabBarIcon:({ tintColor}) => (
+        //         <Icons name="ios-paper" color={tintColor} size={24} />
+        //     )
+        // }
 
-    },
-})
+//     },
+// })
 
 
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-    }
-});
-const navigationOptions={
-    drawerIcon: ({tintColor}) =>(
-        <Icon name="home" style={{ color:tintColor}}/>
-    )
-};
+// const styles = StyleSheet.create({
+//     container:{
+//         flex:1,
+//     }
+// });
+// const navigationOptions={
+//     drawerIcon: ({tintColor}) =>(
+//         <Icon name="home" style={{ color:tintColor}}/>
+//     )
+// };

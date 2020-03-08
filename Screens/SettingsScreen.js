@@ -9,9 +9,9 @@ import ReactNativeSettingsPage, {
     SwitchRow,
     SliderRow
 } from 'react-native-settings-page';
-import Profile from "./Profile";
-import MyEid from "./components/Settings/MyEid";
-import QrcodeScanner from "./components/Settings/QrcodeScanner";
+// import Profile from "./Profile";
+// import MyEid from "./components/Settings/MyEid";
+// import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
 class SettingsScreen extends Component{
 
@@ -35,10 +35,10 @@ class SettingsScreen extends Component{
         const { navigation } = this.props
         navigation.navigate('MyEid');
     }
-    navigateToQrScanner = () => {
-        const { navigation } = this.props
-        navigation.navigate('QrcodeScanner');
-    }
+    // navigateToQrScanner = () => {
+    //     const { navigation } = this.props
+    //     navigation.navigate('QrcodeScanner');
+    // }
     
     render(){
         return(
@@ -52,41 +52,42 @@ class SettingsScreen extends Component{
                 </Right>
             </Header>
             <ReactNativeSettingsPage>
-                <SectionRow text='Usage'>
-                    <Icons name="ios-contact"/>
+                {/* iconName only use FontAwesome icons */}
+                <SectionRow text='Settings list'>
                     <NavigateRow
                         text='Profile'
-                        iconName='ios-contact'
+                        iconName='user'
                         onPressCallback={this.navigateToProfile} />
                     <NavigateRow
                         text='My E-ID'
-                        iconName='your-icon-name'
+                        iconName='vcard-o'
                         onPressCallback={this.navigateToMyEid} />
-                    <NavigateRow
+                    {/* <NavigateRow
                         text='QR-Scanner'
-                        iconName='your-icon-name'
-                        onPressCallback={this.navigateToQrScanner} />
+                        iconName='camera-retro'
+                        onPressCallback={this.navigateToQrScanner}
+                        /> */}
                     <NavigateRow
                         text='Sign My University'
-                        iconName='your-icon-name'
+                        iconName='sign-in'
                         onPressCallback={this.navigateToProfile} />
                     <SwitchRow 
                         text='Enable Dark Mode' 
-                        iconName='your-icon-name'
+                        iconName='moon-o'
                         _value={this.state.switch}
                         _onValueChange={() => { this.setState({ switch: !this.state.switch }) }} />
 
                     <SwitchRow 
                         text='Allow Push Notification' 
-                        iconName='your-icon-name'
+                        iconName='sticky-note'
                         _value={this.state.switch}
                         _onValueChange={() => { this.setState({ switch: !this.state.switch }) }} />
-                    <CheckRow 
+                    {/* <CheckRow 
                         text='Hide My Details'
-                        iconName='your-icon-name'
+                        iconName='linux'
                         _color='#000'
                         _value={this.state.check}
-                        _onValueChange={() => { this.setState({ check: !this.state.check }) }} />
+                        _onValueChange={() => { this.setState({ check: !this.state.check }) }} /> */}
                     <SliderRow 
                         text='Slider Row'
                         iconName='your-icon-name'
@@ -95,6 +96,10 @@ class SettingsScreen extends Component{
                         _max={100}
                         _value={this.state.value}
                         _onValueChange={value => { this.setState({ value }) }} />
+                    <NavigateRow
+                        text='Log Out'
+                        iconName='sign-out'
+                        onPressCallback={this.navigateToMyEid} />
                 </SectionRow>
             </ReactNativeSettingsPage>
             </View>
