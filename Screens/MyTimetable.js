@@ -3,7 +3,8 @@ import{View, Text, StyleSheet} from "react-native";
 import {Header, Icon, Left, Right} from "native-base";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import LecTimetable from "./components/Timetables/LecTimetable";
-import Icons from 'react-native-vector-icons/Ionicons';
+import Icons from 'react-native-vector-icons/Fontisto';
+import Iconu from "react-native-vector-icons/Entypo"
 import ExamTimetable from "./components/Timetables/ExamTimetable";
 
 const Tab = createMaterialBottomTabNavigator();
@@ -21,7 +22,7 @@ class MyTimtable extends Component{
             options={{
                 tabBarLabel: "Lectures",
                   tabBarIcon:({ tintColor}) => (
-                      <Icons name="ios-paper" color={tintColor} size={24} />
+                      <Iconu name="time-slot" color={tintColor} size={24} />
                   )
       
               }}/>
@@ -33,7 +34,7 @@ class MyTimtable extends Component{
             options={{
                 tabBarLabel: "Exams",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="ios-paper" color={tintColor} size={24} />
+                    <Icons name="date" color={tintColor} size={24} />
                     )
             }
         }/>

@@ -63,11 +63,11 @@ class SettingsScreen extends Component{
                         text='My E-ID'
                         iconName='vcard-o'
                         onPressCallback={this.navigateToMyEid} />
-                    {/* <NavigateRow
+                    <NavigateRow
                         text='QR-Scanner'
-                        iconName='camera-retro'
-                        onPressCallback={this.navigateToQrScanner}
-                        /> */}
+                        iconName='qrcode'
+                        // onPressCallback={this.navigateToQrScanner}
+                        />
                     <NavigateRow
                         text='Sign My University'
                         iconName='sign-in'
