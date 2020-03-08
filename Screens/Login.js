@@ -11,6 +11,22 @@ import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
+    constructor(){
+        super()
+        this.state = {
+            showPass: true,
+            press: false
+        }
+    }
+
+    showPass = () => {
+        if(this.state.press == false) {
+            this.setState({ showPass: false, press: true})
+        }
+        else {
+            this.setState({ showPass: true, press : false})
+        }
+    }
     render() {
         return (
             <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -34,13 +50,14 @@ class Login extends Component {
                     <TextInput
                         style={styles.input}
                         placeholder={'Password'}
-                        secureTextEntry={true}
+                        secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(255,255,255,0.7)'}
                         underlineColorAndroid='transparent'
                     />
 
-                    <TouchableOpacity style={styles.btnEye}>
-                        <Icon name={'ios-eye'} size={26} color={'rgba(255,255,255,0.5)'} />
+                    <TouchableOpacity style={styles.btnEye}
+                        onPress={this.showPass.bind(this)}>
+                        <Icon name={this.state.press == false ? 'ios-eye' : 'ios-eye-off'} size={26} color={'rgba(255,255,255,0.5)'} />
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Menu", {screen:Menu})}>
