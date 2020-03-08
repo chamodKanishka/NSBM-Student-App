@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import{View, Text, StyleSheet,WebView} from "react-native";
+import{View, Text, StyleSheet} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
+import { WebView } from 'react-native-webview';
 
 class LecTimetable extends Component{
 

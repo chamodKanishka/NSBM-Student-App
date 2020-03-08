@@ -40,7 +40,6 @@ class SimpleMode extends Component{
                 sortResults={true}
                 style={styles.searchInput}
                 placeholder="Type here to search"
-                caseSensitive="true"
                 />
                 <ScrollView>
                 {filteredEmails.map(email => {
