@@ -40,6 +40,8 @@ target 'StudentApp' do
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
 
+  pod 'react-native-camera-kit', :path => '../node_modules/react-native-camera-kit'
+
   target 'StudentAppTests' do
     inherit! :search_paths
     # Pods for testing
