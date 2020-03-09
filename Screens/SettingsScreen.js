@@ -30,7 +30,7 @@ class SettingsScreen extends Component{
 
     navigateToProfile = () => {
         const { navigation } = this.props
-        navigation.navigate('Profile');
+    navigation.navigate('Profile');
     }
     navigateToMyEid = () => {
         const { navigation } = this.props
@@ -83,20 +83,6 @@ class SettingsScreen extends Component{
                         iconName='sticky-note'
                         _value={this.state.switch}
                         _onValueChange={() => { this.setState({ switch: !this.state.switch }) }} />
-                    {/* <CheckRow 
-                        text='Hide My Details'
-                        iconName='linux'
-                        _color='#000'
-                        _value={this.state.check}
-                        _onValueChange={() => { this.setState({ check: !this.state.check }) }} /> */}
-                    <SliderRow 
-                        text='Slider Row'
-                        iconName='your-icon-name'
-                        _color='#000'
-                        _min={0}
-                        _max={100}
-                        _value={this.state.value}
-                        _onValueChange={value => { this.setState({ value }) }} />
                     <NavigateRow
                         text='Log Out'
                         iconName='sign-out'

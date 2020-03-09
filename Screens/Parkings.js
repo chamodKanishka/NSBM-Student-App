@@ -3,8 +3,10 @@ import{View, Text, StyleSheet} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base';
 import CardView from 'react-native-cardview';
 
+  
 class Parking extends Component{
     render(){
+        
         return(
             <View style={styles.container}>
             <Header style={styles.header}>

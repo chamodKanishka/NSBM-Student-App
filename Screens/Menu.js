@@ -12,7 +12,7 @@ import MyTimetable from './MyTimetable'
 import LectureMaterials from './LectureMaterials'
 import Iconsa from "react-native-vector-icons/AntDesign"
 import Iconu from "react-native-vector-icons/Entypo"
-
+import Profile from "./Profile"
 // function HomeScreens({ navigation }) {
 //     return (
 //       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -91,6 +91,17 @@ export default function Menu() {
               <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>
           )
       }}/>
+
+
+      <Drawer.Screen 
+         name="Profile" 
+         component={Profile}
+         options = {{
+          drawerIcon : ({ tintColor }) => (
+              <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>
+          )
+      }}/>
+      
 
 
             <Drawer.Screen name="Notifications" component={NotificationsScreen}/>
