@@ -10,7 +10,7 @@ import ReactNativeSettingsPage, {
     SliderRow
 } from 'react-native-settings-page';
 //import Profile from "./Profile";
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
 
@@ -30,16 +30,16 @@ class SettingsScreen extends Component{
 
     navigateToProfile = () => {
         const { navigation } = this.props
-    navigation.navigate('Profile');
+        navigation.navigate('Profile');
     }
     navigateToMyEid = () => {
         const { navigation } = this.props
         navigation.navigate('MyEid');
     }
-    // navigateToQrScanner = () => {
-    //     const { navigation } = this.props
-    //     navigation.navigate('QrcodeScanner');
-    // }
+    navigateToQrScanner = () => {
+        const { navigation } = this.props
+        navigation.navigate('QrcodeScanner');
+    }
     
     render(){
         return(
@@ -66,7 +66,7 @@ class SettingsScreen extends Component{
                     <NavigateRow
                         text='QR-Scanner'
                         iconName='qrcode'
-                        // onPressCallback={this.navigateToQrScanner}
+                        onPressCallback={this.navigateToQrScanner}
                         />
                     <NavigateRow
                         text='Sign My University'

@@ -14,6 +14,7 @@ import Iconsa from "react-native-vector-icons/AntDesign"
 import Iconu from "react-native-vector-icons/Entypo"
 import Profile from "./Profile"
 import QrcodeScanner from './components/Settings/QrcodeScanner'
+import MyEid from './components/Settings/MyEid'
 // function HomeScreens({ navigation }) {
 //     return (
 //       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -103,9 +104,18 @@ export default function Menu() {
           )
       }}/>
 
-<Drawer.Screen 
+      <Drawer.Screen 
          name="QR Scanner" 
          component={QrcodeScanner}
+         options = {{
+          drawerIcon : ({ tintColor }) => (
+              <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>
+          )
+      }}/> 
+
+      <Drawer.Screen 
+         name="My E-ID" 
+         component={MyEid}
          options = {{
           drawerIcon : ({ tintColor }) => (
               <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>

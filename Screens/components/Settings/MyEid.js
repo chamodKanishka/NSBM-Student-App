@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import QRCode from 'react-native-qrcode';
+import QRCode from 'react-native-qrcode-generator';
 import {
     AppRegistry,
     StyleSheet,
@@ -10,22 +10,17 @@ import {
 
 class MyEid extends Component{
     state = {
-        text: 'hello',
+        text: 'http://facebook.github.io/react-native/',
     };
 
     render(){
         return(
             <View style={styles.container}>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={(text) => this.setState({text: text})}
-                    value={this.state.text}
-                />
                 <QRCode
-                    value={this.state.text}
-                    size={300}
-                    bgColor='#2879fe'
-                    fgColor='white'/>
+          value={this.state.text}
+          size={400}
+          bgColor='black'
+          fgColor='white'/>
             </View>
 
         );
@@ -39,14 +34,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        margin: 10,
-        borderRadius: 5,
-        padding: 5,
     }
+
 });
