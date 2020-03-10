@@ -17,10 +17,10 @@ class MyEid extends Component{
         return(
             <View style={styles.container}>
                 <QRCode
-          value={this.state.text}
-          size={400}
-          bgColor='black'
-          fgColor='white'/>
+                    value={this.state.text}
+                    size={500}
+                    bgColor='black'
+                    fgColor='white'/>
             </View>
 
         );
@@ -33,7 +33,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        // padding:200,
+        // marginLeft:100
+        paddingLeft:250,
+        paddingTop:200,
+        // resizeMode: false
+
     }
 
 });
