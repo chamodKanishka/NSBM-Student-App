@@ -15,7 +15,10 @@ class MyTimtable extends Component{
 
     render(){
         return(
-            <Tab.Navigator>
+            <Tab.Navigator
+            shifting={true}
+            activeColor="white"
+            inactiveColor="black">
             <Tab.Screen 
             name="Lectures" 
             component={LecTimetable} 

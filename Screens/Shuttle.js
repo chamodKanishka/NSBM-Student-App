@@ -14,14 +14,17 @@ class Shuttle extends Component{
 
     render(){
         return(
-            <Tab.Navigator>
+            <Tab.Navigator
+            shifting={true}
+            activeColor="white"
+            inactiveColor="black">
             <Tab.Screen 
             name="Shuttle" 
             component={ShuttleMap} 
             options={{
                 tabBarLabel:"Map",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="md-map" color={tintColor} size={24} />
+                    <Icons name="md-map" color={tintColor} size={26} />
                 )
             }}/>
             <Tab.Screen 
@@ -30,7 +33,7 @@ class Shuttle extends Component{
             options={{
                 tabBarLabel:"Timetables",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="ios-paper" color={tintColor} size={24} />
+                    <Icons name="ios-paper" color={tintColor} size={26} />
                 )
             }}/>
             {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}

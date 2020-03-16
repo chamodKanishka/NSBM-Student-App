@@ -20,6 +20,9 @@ export default function App() {
                 </Right>
             </Header>
     <Tab.Navigator 
+    shifting={true}
+    activeColor="white"
+    inactiveColor="black"
     tabBarOptions={{
       labelStyle: { fontSize: 16, color: "white" },
       style: { backgroundColor: '#2196f3', },

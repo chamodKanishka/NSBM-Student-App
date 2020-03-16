@@ -20,14 +20,17 @@ class HomeScreen extends Component{
     }*/
     render(){
         return(
-            <Tab.Navigator>
+            <Tab.Navigator
+            shifting={true}
+            activeColor="white"
+            inactiveColor="black">
             <Tab.Screen 
             name="News" 
             component={News}
             options={{
                 tabBarLabel:"News",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="md-browsers" color={tintColor} size={24} />
+                    <Icons name="md-browsers" color={tintColor} size={26} />
                 )
             }} />
             <Tab.Screen 
@@ -36,7 +39,7 @@ class HomeScreen extends Component{
             options={{
                 tabBarLabel:"Events",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="ios-paper" color={tintColor} size={24} />
+                    <Icons name="ios-paper" color={tintColor} size={26} />
                 )
             }}/>
             </Tab.Navigator>
