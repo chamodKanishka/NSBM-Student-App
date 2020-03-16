@@ -32,7 +32,7 @@ class Login extends Component {
             <ImageBackground source={bgImage} style={styles.backgroundContainer}>
                 <View style={styles.logoContainer}>
                     <Image source={logo} style={styles.logo} />
-                    <Text style={styles.logoText}>NSBM STUDENT APP</Text>
+                    <Text style={styles.logoText}>NSBM STUDENTS APP</Text>
                 </View>
                 <View style={styles.inputContainer}>
                     <Icons name={'user'} size={24} color={'rgba(255,255,255,0.7)'}

@@ -9,7 +9,10 @@ import React from 'react';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './Screens/Login';
-import Menu from './Screens/Menu'
+import Menu from './Screens/Menu';
+import RNBootSplash from "react-native-bootsplash";
+
+RNBootSplash.hide(10); // fade
 
 export default class App extends React.Component {
     render() {
