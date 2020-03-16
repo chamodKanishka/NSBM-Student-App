@@ -19,9 +19,22 @@ export default function App() {
                 <Text style={styles.text}>Timetables</Text>
                 </Right>
             </Header>
-    <Tab.Navigator style={styles.tab}>
-      <Tab.Screen name="NSBM Shuttles" component={NsbmShuttles} />
-      <Tab.Screen name="Others" component={OtherShuttles} />
+    <Tab.Navigator 
+    tabBarOptions={{
+      labelStyle: { fontSize: 16, color: "white" },
+      style: { backgroundColor: '#2196f3', },
+    }}>
+
+
+      <Tab.Screen name="NSBM Shuttles" 
+
+      component={NsbmShuttles}
+       />
+
+      <Tab.Screen 
+      name="Others" 
+      component={OtherShuttles} 
+      />
     </Tab.Navigator>
     </View>
   );
@@ -38,8 +51,7 @@ const styles = StyleSheet.create({
 
   },
   tab: {
-      ...StyleSheet.absoluteFillObject,
-      marginTop:50,
+      backgroundColor:"#2196f3"
     },
     header:{
       backgroundColor:"#2196f3"
