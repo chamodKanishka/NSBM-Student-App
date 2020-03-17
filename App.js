@@ -12,7 +12,7 @@ import Login from './Screens/Login';
 import Menu from './Screens/Menu';
 import RNBootSplash from "react-native-bootsplash";
 
-RNBootSplash.hide(10); // fade
+RNBootSplash.hide(); // fade
 
 export default class App extends React.Component {
     render() {

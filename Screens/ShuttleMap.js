@@ -5,7 +5,38 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LightMap from "./components/mapColor/lightmap"
 import DarkMap from "./components/mapColor/darkmap"
 import Logo from '../images/logoss.png'
+
+
+async function requestLocationPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'NSBM Transport App Location Permission',
+          message:
+            'NSBM Transort App needs access to your location, ' +
+            'so you can share location.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the location');
+      } else {
+        console.log('Location permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
+
 class ShuttleMap extends Component{
+    async componentDidMount(){
+        await requestLocationPermission()
+    }
+    
     render(){
         return(
             <View style={styles.container}>
