@@ -2,7 +2,37 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Platform, TouchableOpacity, Linking, PermissionsAndroid } from 'react-native';
 import { CameraKitCameraScreen, } from 'react-native-camera-kit';
 
+
+async function requestCameraPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'NSBM Transport App Camera Permission',
+          message:
+            'NSBM Transort App needs access to your camera, ' +
+            'so you can scan QR codes.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
+
 class QrcodeScanner extends Component {
+    async componentDidMount(){
+        await requestCameraPermission()
+    }
+
     constructor() {
         super();
         this.state = {
