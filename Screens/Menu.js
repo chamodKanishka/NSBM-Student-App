@@ -3,7 +3,6 @@ import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import  Iconsi  from 'react-native-vector-icons/Ionicons'
-import Parking from './Parkings'
 import LocalMap from './NSBMmap'
 import HomeScreen from './HomeScreen'
 import Shuttle from './Shuttle'
@@ -39,9 +38,7 @@ const Drawer = createDrawerNavigator();
 export default function Menu() {
   return (
     <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Parking">
-            <Drawer.Screen name="Parking" component={Parking}/>
-            
+        <Drawer.Navigator initialRouteName="Home">            
             
             <Drawer.Screen name="Home"
              component={HomeScreen}
@@ -121,9 +118,6 @@ export default function Menu() {
               <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>
           )
       }}/>      
-
-
-            <Drawer.Screen name="Notifications" component={NotificationsScreen}/>
         </Drawer.Navigator>
     </NavigationContainer>
   );

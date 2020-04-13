@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         height: 350,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,

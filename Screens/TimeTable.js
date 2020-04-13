@@ -25,7 +25,7 @@ export default function App() {
     inactiveColor="black"
     tabBarOptions={{
       labelStyle: { fontSize: 16, color: "white" },
-      style: { backgroundColor: '#2196f3', },
+      style: { backgroundColor: '#2879fe', },
     }}>
 
 
@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
 
   },
   tab: {
-      backgroundColor:"#2196f3"
+      backgroundColor:"#2879fe"
     },
     header:{
-      backgroundColor:"#2196f3"
+      backgroundColor:"#2879fe"
   },
   right:{
       fontSize:24,

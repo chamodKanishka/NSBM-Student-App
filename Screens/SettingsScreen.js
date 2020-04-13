@@ -100,10 +100,10 @@ const styles = StyleSheet.create({
         flex:1,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,
-        color:"white"
+        color:"white",
     }
 });

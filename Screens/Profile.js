@@ -40,7 +40,7 @@ class Profile extends Component{
     render(){
         return(
             <View style={styles.container}>
-            <Header style={{backgroundColor:"green"}}>
+            <Header style={styles.head}>
                 <Left>
                     <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
 
@@ -91,7 +91,9 @@ const styles = StyleSheet.create({
     },
     label:{
         fontSize:20,
-        fontWeight:'700',
         marginBottom:30
+    },
+    head:{
+        backgroundColor: '#2879fe',
     }
 });

@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         marginRight:5
       },
       header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,

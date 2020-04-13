@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Platform, TouchableOpacity, Linking, PermissionsAndroid } from 'react-native';
 import { CameraKitCameraScreen, } from 'react-native-camera-kit';
+import Icons from 'react-native-vector-icons/Ionicons';
+import { Header, Left, Right, Icon} from 'native-base';
+import SettingsScreen from '../../SettingsScreen'
 
 
 async function requestCameraPermission() {
@@ -83,6 +86,16 @@ class QrcodeScanner extends Component {
         if (!this.state.Start_Scanner) {
 
             return (
+                <View style={styles.container}>
+                        <Header style={styles.header}>
+                <Left>
+                        <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
+
+                </Left>
+                    <Right>
+                    <Text style={styles.right}>E-ID</Text>
+                    </Right>
+                </Header>
                 <View style={styles.MainContainer}>
 
                     <Text style={{ fontSize: 22, textAlign: 'center' }}>Click button to start scan</Text>
@@ -107,6 +120,7 @@ class QrcodeScanner extends Component {
                         </Text>
                     </TouchableOpacity>
 
+                </View>
                 </View>
             );
         }
@@ -150,4 +164,14 @@ const styles = StyleSheet.create({
         width: 300,
         marginTop: 14
     },
+    container:{
+        flex:1,
+    },
+    header:{
+        backgroundColor:"#2879fe"
+    },
+    right:{
+        fontSize:24,
+        color:"white",
+    }
 });
