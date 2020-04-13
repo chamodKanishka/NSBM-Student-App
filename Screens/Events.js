@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet, SafeAreaView,TextInput,Platform,StatusBar,ScrollView,Image,Dimensions} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 import Category from '../Screens/components/Events/Category';
-
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
+import event from "../images/event.jpg"
 const{height,width} = Dimensions.get('window')
 class Events extends Component{
     render(){
@@ -27,30 +28,25 @@ class Events extends Component{
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     >
-                       <Category imageUri={require('../images/nsbm.jpg')}
+                       <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
-                       <Category imageUri={require('../images/nsbm.jpg')}
+                       <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
-                       <Category imageUri={require('../images/nsbm.jpg')}
+                       <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
-                       <Category imageUri={require('../images/nsbm.jpg')}
+                       <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
-                       <Category imageUri={require('../images/nsbm.jpg')}
+                       <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
                     </ScrollView>
 
                 </View>
-                <View style={{ marginTop:40, paddingHorizontal:20}}>
-                    <Text style={{fontSize:24, fontWeight:'700'}}>
-                       Aurudu Event
-                    </Text>
-                    <Text style={{fontWeight:'100', marginTop:10}}>Showing mostpopular or upcoming biggest event </Text>
-                    <View style={{ width: width- 40,height:200, marginTop:20}}>
-                        <Image 
-                        style={{flex:1,height:null,width:null, resizeMode:'cover', borderRadius:5, borderWidth:1,borderColor:'#dddddd'}}
-                         source={require('../images/nsbm.jpg')}/>
-                    </View>
-                </View>
+                <Card style={styles.event}>
+                <CardImage source={event}/>
+                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                </Card>
+
             </View>
 
             </ScrollView>
@@ -71,5 +67,8 @@ const styles = StyleSheet.create({
     right:{
         fontSize:24,
         color:"white"
+    },
+    event:{
+        
     }
 });

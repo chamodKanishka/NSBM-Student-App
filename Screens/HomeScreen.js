@@ -25,10 +25,10 @@ class HomeScreen extends Component{
             activeColor="white"
             inactiveColor="black">
             <Tab.Screen 
-            name="News" 
+            name="Notifications" 
             component={News}
             options={{
-                tabBarLabel:"News",
+                tabBarLabel:"Notifications",
                 tabBarIcon:({ tintColor}) => (
                     <Icons name="md-browsers" color={tintColor} size={26} />
                 )
