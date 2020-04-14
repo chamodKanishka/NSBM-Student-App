@@ -14,6 +14,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Profile from "./Profile";
 import MyEid from './components/Settings/MyEid';
 import QrcodeScanner from './components/Settings/QrcodeScanner';
+import Login from './Login';
 // import { NavigationContainer } from '@react-navigation/native';
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
@@ -44,8 +45,12 @@ class SettingsScreen extends Component{
         ('MyEid', {screen:MyEid});
     }
     navigateToQrScanner = () => {
-        const { navigation } = this.props
-        navigation.navigate('QrcodeScanner');
+        const {} = this.props.navigation.navigate
+        ('QrcodeScanner', {screen:QrcodeScanner});
+    }
+    navigateToLogout = () => {
+        const {} = this.props.navigation.navigate
+        ('Login', {screen:Login});
     }
     
     render(){
@@ -93,7 +98,7 @@ class SettingsScreen extends Component{
                     <NavigateRow
                         text='Log Out'
                         iconName='sign-out'
-                        onPressCallback={this.navigateToMyEid} />
+                        onPressCallback={this.navigateToLogout} />
                 </SectionRow>
             </ReactNativeSettingsPage>
             </View>

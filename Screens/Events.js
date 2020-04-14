@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import{View, Text, StyleSheet, SafeAreaView,TextInput,Platform,StatusBar,ScrollView,Image,Dimensions} from "react-native";
+import{View, Text, StyleSheet, SafeAreaView,TextInput,Platform,StatusBar,ScrollView,Image,Dimensions, TouchableOpacity} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 import Category from '../Screens/components/Events/Category';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
@@ -21,30 +21,40 @@ class Events extends Component{
                 scrollEventThrottle={16}
             >
             <View style={{flex:1, backgroundColor:'white',paddingTop:20}}>
-                <Text style={{ fontSize:24, fontWeight:'700',paddingHorizontal:20}}>Find Events Organized on NSBM
+                <Text style={{ fontSize:24, fontWeight:'700',paddingHorizontal:20}}>Events of NSBM
                 </Text>
                 <View style={{height:130, marginTop:20}}>
                     <ScrollView
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     >
+                       <TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
+                       </TouchableOpacity>
+                       <TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
+                       </TouchableOpacity><TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
+                       </TouchableOpacity><TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
+                       </TouchableOpacity><TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
+                       </TouchableOpacity>
                     </ScrollView>
 
                 </View>
                 <Card style={styles.event}>
                 <CardImage source={event}/>
                 <CardTitle title="This is title" subtitle="This is sub title"/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
                 </Card>
 
             </View>

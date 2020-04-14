@@ -12,6 +12,7 @@ import SettingsScreen from './SettingsScreen';
 import Profile from './Profile';
 import MyEid from './components/Settings/MyEid';
 import QrcodeScanner from './components/Settings/QrcodeScanner';
+import Login from './Login';
 import RNBootSplash from "react-native-bootsplash";
 
 RNBootSplash.hide(); // fade
@@ -29,7 +30,7 @@ const AppNavigator = createStackNavigator({
         navigationOptions: {  // Extra Navigation Options
             headerShown: false,  //Make the header bar Null - No Header
             gestureEnabled: false  //Gestures disable
-        },
+          },
     },
     Profile: {
       screen: Profile,
@@ -73,7 +74,7 @@ QrcodeScanner: {
             fontSize:24,
           },
     },
-}
+},
   
 
 });
