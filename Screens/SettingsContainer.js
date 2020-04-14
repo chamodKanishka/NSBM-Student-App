@@ -34,22 +34,44 @@ const AppNavigator = createStackNavigator({
     Profile: {
       screen: Profile,
       navigationOptions: {  // Extra Navigation Options
-          headerShown: false,  //Make the header bar Null - No Header
-          gestureEnabled: false  //Gestures disable
-      },
+        title: 'Profile',   
+        //Gestures disable
+          headerStyle: {
+            backgroundColor: '#2879fe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:24,
+          },
+        },
   },
   MyEid: {
     screen: MyEid,
     navigationOptions: {  // Extra Navigation Options
-        headerShown: false,  //Make the header bar Null - No Header
-        gestureEnabled: false  //Gestures disable
+        title: 'E-ID',
+        headerStyle: {
+            backgroundColor: '#2879fe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:24,
+          },
     },
 },
 QrcodeScanner: {
     screen: QrcodeScanner,
     navigationOptions: {  // Extra Navigation Options
-        headerShown: false,  //Make the header bar Null - No Header
-        gestureEnabled: false  //Gestures disable
+        title: 'QR-Scanner',
+        headerStyle: {
+            backgroundColor: '#2879fe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:24,
+          },
     },
 }
   

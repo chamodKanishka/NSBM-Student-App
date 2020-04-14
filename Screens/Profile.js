@@ -40,15 +40,6 @@ class Profile extends Component{
     render(){
         return(
             <View style={styles.container}>
-            <Header style={styles.head}>
-                <Left>
-                    <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
-
-                </Left>
-                <Right>
-                <Text style={{fontSize:24,fontWeight:"bold", color:"white"}}>Profile</Text>
-                </Right>
-            </Header>
              <View style={{ height:150,alignItems:'center', justifyContent:'center', marginBottom:50,}}>
                  <PhotoUpload
                      onPhotoSelect={avatar => {

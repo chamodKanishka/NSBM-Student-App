@@ -20,15 +20,6 @@ class MyEid extends Component{
     render(){
         return(
             <View style={styles.maincontainer}>
-            <Header style={styles.header}>
-            <Left>
-                    <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
-
-            </Left>
-                <Right>
-                <Text style={styles.right}>E-ID</Text>
-                </Right>
-            </Header>
             <View style={styles.container}>
                 <QRCode
                     value={this.state.text}

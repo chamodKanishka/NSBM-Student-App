@@ -87,15 +87,6 @@ class QrcodeScanner extends Component {
 
             return (
                 <View style={styles.container}>
-                        <Header style={styles.header}>
-                <Left>
-                        <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Settings", {screen:SettingsScreen})}/>
-
-                </Left>
-                    <Right>
-                    <Text style={styles.right}>E-ID</Text>
-                    </Right>
-                </Header>
                 <View style={styles.MainContainer}>
 
                     <Text style={{ fontSize: 22, textAlign: 'center' }}>Click button to start scan</Text>
