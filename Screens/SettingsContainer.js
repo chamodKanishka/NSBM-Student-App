@@ -5,17 +5,18 @@
  * @format
  * @flow
  */
-import React from 'react';
+import React, { Component } from 'react';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
-import Login from './Screens/Login';
-import Menu from './Screens/Menu';
-import Profile from './Screens/Profile';
+import SettingsScreen from './SettingsScreen';
+import Profile from './Profile';
+import MyEid from './components/Settings/MyEid';
+import QrcodeScanner from './components/Settings/QrcodeScanner';
 import RNBootSplash from "react-native-bootsplash";
 
 RNBootSplash.hide(); // fade
 
-export default class App extends React.Component {
+export default class SettingsContainer extends Component{
     render() {
         return <AppContainer />;
     }
@@ -23,22 +24,29 @@ export default class App extends React.Component {
 
 //Creating Stack Navigator for All Routes in Application
 const AppNavigator = createStackNavigator({
-    Login: {
-        screen: Login,
+    SettingsScreen: {
+        screen: SettingsScreen,
         navigationOptions: {  // Extra Navigation Options
             headerShown: false,  //Make the header bar Null - No Header
             gestureEnabled: false  //Gestures disable
         },
     },
-    Menu: {
-      screen: Menu,
+    Profile: {
+      screen: Profile,
       navigationOptions: {  // Extra Navigation Options
           headerShown: false,  //Make the header bar Null - No Header
           gestureEnabled: false  //Gestures disable
       },
   },
-  Profile: {
-    screen: Profile,
+  MyEid: {
+    screen: MyEid,
+    navigationOptions: {  // Extra Navigation Options
+        headerShown: false,  //Make the header bar Null - No Header
+        gestureEnabled: false  //Gestures disable
+    },
+},
+QrcodeScanner: {
+    screen: QrcodeScanner,
     navigationOptions: {  // Extra Navigation Options
         headerShown: false,  //Make the header bar Null - No Header
         gestureEnabled: false  //Gestures disable

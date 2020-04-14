@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base';
 
+
 class LectureMaterials extends Component{
 
 
     render(){
+        const resourceType = 'base64';
         return(
             <View style={styles.container}>
             <Header style={styles.header}>
@@ -13,10 +15,9 @@ class LectureMaterials extends Component{
                     <Icon name="menu" onPress={() =>this.props.navigation.openDrawer()}/>
                 </Left>
                 <Right>
-                <Text style={styles.right}>LectureMaterials</Text>
+                <Text style={styles.right}>Lecture Materials</Text>
                 </Right>
             </Header>
-            <Text>LectureMaterials</Text>
             </View>
         );
     }

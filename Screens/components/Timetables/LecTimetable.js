@@ -20,6 +20,9 @@ class LecTimetable extends Component{
                 <WebView
                     source = {{ uri:
                             'https://docs.google.com/spreadsheets/d/1e7z2sxXT1WcK0iH8iQwRUjQpLULEd_tvtO7C1tJ9gFY/edit#gid=806617593' }}
+                            injectedJavaScript={`const meta = document.createElement('meta'); meta.setAttribute('content', 'width=width, initial-scale=0.8, maximum-scale=0.5, user-scalable=2.0'); meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); `}
+                            scalesPageToFit={true}
+                            onLoadEnd={this._onLoadEnd}
                 />
             </View>
         );

@@ -6,12 +6,11 @@ import  Iconsi  from 'react-native-vector-icons/Ionicons'
 import LocalMap from './NSBMmap'
 import HomeScreen from './HomeScreen'
 import Shuttle from './Shuttle'
-import SettingsScreen from './SettingsScreen'
+import SettingsContainer from './SettingsContainer';
 import MyTimetable from './MyTimetable'
 import LectureMaterials from './LectureMaterials'
 import Iconsa from "react-native-vector-icons/AntDesign"
 import Iconu from "react-native-vector-icons/Entypo"
-import Profile from "./Profile"
 import QrcodeScanner from './components/Settings/QrcodeScanner'
 import MyEid from './components/Settings/MyEid'
 // function HomeScreens({ navigation }) {
@@ -84,17 +83,7 @@ export default function Menu() {
 
          <Drawer.Screen 
          name="Settings" 
-         component={SettingsScreen}
-         options = {{
-          drawerIcon : ({ tintColor }) => (
-              <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>
-          )
-      }}/>
-
-
-      <Drawer.Screen 
-         name="Profile" 
-         component={Profile}
+         component={SettingsContainer}
          options = {{
           drawerIcon : ({ tintColor }) => (
               <Iconsi name="ios-settings" style = {{ fontSize:23, color:tintColor}}/>

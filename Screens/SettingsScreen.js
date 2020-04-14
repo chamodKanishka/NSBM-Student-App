@@ -9,7 +9,11 @@ import ReactNativeSettingsPage, {
     SwitchRow,
     SliderRow
 } from 'react-native-settings-page';
-//import Profile from "./Profile";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from 'react-navigation-stack';
+import Profile from "./Profile";
+import MyEid from './components/Settings/MyEid';
+import QrcodeScanner from './components/Settings/QrcodeScanner';
 // import { NavigationContainer } from '@react-navigation/native';
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
@@ -29,12 +33,15 @@ class SettingsScreen extends Component{
     }
 
     navigateToProfile = () => {
-        const { navigation } = this.props
-        navigation.navigate('Profile');
+        const {} = 
+        this.props.navigation.navigate
+        ("Profile", {screen:Profile});
     }
+    
     navigateToMyEid = () => {
-        const { navigation } = this.props
-        navigation.navigate('MyEid');
+        const {} = 
+        this.props.navigation.navigate
+        ('MyEid', {screen:MyEid});
     }
     navigateToQrScanner = () => {
         const { navigation } = this.props
@@ -94,6 +101,9 @@ class SettingsScreen extends Component{
     }
 }
 export default SettingsScreen;
+
+
+
 
 const styles = StyleSheet.create({
     container:{
