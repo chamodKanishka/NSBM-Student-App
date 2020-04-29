@@ -2,9 +2,25 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet, Button, ScrollView} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base';
 import {Card} from 'react-native-shadow-cards';
+import axios from 'axios';
 
 class News extends Component{
 
+    state = {
+        title:'What is the purpose of Title',
+        description:'What is the advantage of Decription'
+      }
+
+    componentDidMount() {
+        axios.get(`url`)
+          .then(res => {
+            const title = res.data;
+            this.setState({ title });
+            const description = res.data;
+            this.setState({ description });
+          })
+          .catch(error => {console.log(error)});
+      }
 
     render(){
         return(
@@ -21,140 +37,11 @@ class News extends Component{
             <Card style={styles.card} title="Learn More">
             <Button
                 onPress={()=>{}}
-                title="Title"
+                title={this.state.title}
                 Color="#fff"
                 accessibilityLabel="Learn more about this purple button"
                 />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.
-                Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.
-                Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu</Text>
-            </Card>
-            <Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
-            </Card><Card style={styles.card} title="Learn More">
-            <Button
-                onPress={()=>{}}
-                title="Title"
-                Color="#fff"
-                accessibilityLabel="Learn more about this purple button"
-                />
-                <Text>Open up App.js to start working on your app!
-                    Changes you make will automatically reload.
-                Shake your phone to open the developer menu.</Text>
+                <Text>{this.state.description}</Text>
             </Card>
             </ScrollView>
             </View>
@@ -168,7 +55,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,

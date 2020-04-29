@@ -30,7 +30,7 @@ class HomeScreen extends Component{
             options={{
                 tabBarLabel:"Notifications",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="md-browsers" color={tintColor} size={26} />
+                    <Icons name="ios-paper" color={tintColor} size={26} />
                 )
             }} />
             <Tab.Screen 
@@ -39,7 +39,7 @@ class HomeScreen extends Component{
             options={{
                 tabBarLabel:"Events",
                 tabBarIcon:({ tintColor}) => (
-                    <Icons name="ios-paper" color={tintColor} size={26} />
+                    <Icons name="md-browsers" color={tintColor} size={26} />
                 )
             }}/>
             </Tab.Navigator>

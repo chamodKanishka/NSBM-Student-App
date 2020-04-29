@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-
-import bgImage from '../images/nsbm.jpg'
-import logo from '../images/logos.png'
+import axios from 'axios';
+import bgImage from '../images/nsbm1.jpeg'
+import logo from '../images/logosss.png'
 import Menu from './Menu'
-import HomeScreen from './HomeScreen';
 import Icon from 'react-native-vector-icons/Ionicons'
 import Icons from 'react-native-vector-icons/AntDesign'
 import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
+    state ={
+        email:"",
+        password:"",
+        errorMessage: null
+      };
+
+      handleLogin = () => {
+        const{email,password} = this.state;
+    
+      };
+      
     constructor(){
         super()
         this.state = {
@@ -27,6 +37,7 @@ class Login extends Component {
             this.setState({ showPass: true, press : false})
         }
     }
+    
     render() {
         return (
             <ImageBackground source={bgImage} style={styles.mainContainer}>
@@ -39,9 +50,12 @@ class Login extends Component {
                      style={styles.inputIcon}></Icons>
                     <TextInput
                         style={styles.input}
-                        placeholder={'Username'}
+                        placeholder={'Email'}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
+                        keyboardType="email-address"
+                        onChangeText={email => this.setState({email})}
+                        value={this.state.email}
                     />
                 </View>
                 <View style={styles.inputContainer}>
@@ -53,6 +67,8 @@ class Login extends Component {
                         secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
+                        onChangeText={password => this.setState({password})}
+                        value={this.state.password}
                     />
 
                     <TouchableOpacity style={styles.btnEye}
@@ -87,15 +103,15 @@ const styles = StyleSheet.create({
 
     },
     logo: {
-        width: 120,
-        height: 120
+        width: 80,
+        height: 100
     },
     logoText: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: '500',
         marginTop: 10,
-        opacity: 0.8
+        opacity: 1
     },
     inputContainer:{
         marginTop: 10
@@ -113,8 +129,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         fontSize: 20,
         paddingLeft: 45,
-        backgroundColor: 'rgba(255,255,255,0.7)',
-        color: 'rgba(255,255,255,1)',
+        backgroundColor: 'rgba(255,255,255,0.8)',
+        color: 'rgba(55,55,55,0.8)',
         marginHorizontal: 25
 
     },
