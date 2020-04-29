@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         fontSize: 20,
         paddingLeft: 45,
-        backgroundColor: 'rgba(255,255,255,0.8)',
+        backgroundColor: 'rgba(255,255,255,0.7)',
         color: 'rgba(55,55,55,0.8)',
         marginHorizontal: 25
 

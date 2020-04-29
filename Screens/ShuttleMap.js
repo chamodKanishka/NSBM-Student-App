@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import{View, Text, StyleSheet, PermissionsAndroid, BackHandler, DeviceEventEmitter} from "react-native";
+import{View, Text, StyleSheet, PermissionsAndroid, Button, BackHandler, DeviceEventEmitter, TouchableOpacity} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LightMap from "./components/mapColor/lightmap"
@@ -78,6 +78,15 @@ class ShuttleMap extends Component{
                         opacity={1.0}
                      />
                 </MapView>
+                <View style={styles.touch}>
+                <TouchableOpacity
+                
+                  style={[styles.bubble, styles.button]}
+                >
+                  <Text>Refresh</Text>
+              </TouchableOpacity>
+              </View>
+                
             </View>
         );
     }
@@ -93,6 +102,11 @@ const styles = StyleSheet.create({
         alignItems:'stretch',
         ...StyleSheet.absoluteFillObject,
   
+      },
+      touch:{
+        flexDirection: 'column-reverse',
+        alignItems:'flex-end',
+        marginBottom:-5
       },
       map: {
         ...StyleSheet.absoluteFillObject,
@@ -110,5 +124,25 @@ const styles = StyleSheet.create({
     text:{
         fontSize:24, 
         color:"white"
-    }
+    },
+    bubble: {
+
+      backgroundColor: 'rgba(255,255,255,0.5)',
+      // paddingHorizontal: 28,
+      // paddingVertical: 18,
+      borderRadius: 20,
+      alignItems:'center',
+    },
+    button: {
+      width: 80,
+      // height:60,
+      padding: 15,
+      // alignItems: 'flex-end',
+      // marginHorizontal: 10,
+    },
+    buttonContainerUpDown: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      justifyContent: 'center',
+    },
    });

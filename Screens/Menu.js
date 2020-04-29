@@ -43,12 +43,7 @@ export default function Menu() {
               <Iconsa name="table" color ={tintColor} size={25} />
             }}/>
 
-            <Drawer.Screen name="Lecture Materials"
-             component={LectureMaterials}
-             options={{
-              drawerIcon:({tintColor})  =>
-              <Iconu name="text-document" color ={tintColor} size={25} />
-            }}/>
+            
             
             
             <Drawer.Screen name="Local Map" 

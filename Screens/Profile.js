@@ -33,6 +33,13 @@ async function requestCameraPermission() {
 
 class Profile extends Component{
 
+    state = {
+        name:'Chathuranga Nanayakkara',
+        email:'nwvckchathuranga@students.nsbm.lk',
+        degree:'SE(Plymouth)',
+        batch:'17.1'
+
+    }
     async componentDidMount(){
         await requestCameraPermission()
     }
@@ -64,11 +71,10 @@ class Profile extends Component{
                  </PhotoUpload>
                 </View>
                 <View style={{marginLeft:20,}}>
-                <Text style={styles.label}>Name:</Text>
-                <Text style={styles.label}>Contact No:</Text>
-                <Text style={styles.label}>Email:</Text>
-                <Text style={styles.label}>Degree:</Text>
-                <Text style={styles.label}>Batch:</Text>
+                        <Text style={styles.label}>Name:    {this.state.name}</Text>
+                <Text style={styles.label}>Email:   {this.state.email}</Text>
+                        <Text style={styles.label}>Degree:  {this.state.degree}</Text>
+                        <Text style={styles.label}>Batch:   {this.state.batch}</Text>
             </View>
             </View>
         );
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     label:{
-        fontSize:20,
+        fontSize:18,
         marginBottom:30
     },
     head:{
