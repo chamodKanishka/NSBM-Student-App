@@ -1,9 +1,6 @@
 
 import React, { Component } from "react";
-import Icons from 'react-native-vector-icons/Ionicons';
-import { Header, Left, Right, Icon} from 'native-base';
-import SettingsScreen from '../../SettingsScreen';
-import QRCode from 'react-native-qrcode-generator';
+import QRCode from 'react-native-qrcode2';
 import {
     AppRegistry,
     StyleSheet,

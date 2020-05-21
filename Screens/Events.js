@@ -30,11 +30,11 @@ class Events extends Component{
                     >
                        <TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
-                       name='NSBM'/>
+                       name='Firebase(FOSS)'/>
                        </TouchableOpacity>
                        <TouchableOpacity>
-                       <Category imageUri={require('../images/event.jpg')}
-                       name='NSBM'/>
+                       <Category imageUri={require('../images/nsbm.jpg')}
+                       name='IPT'/>
                        </TouchableOpacity><TouchableOpacity>
                        <Category imageUri={require('../images/event.jpg')}
                        name='NSBM'/>
@@ -48,6 +48,38 @@ class Events extends Component{
                     </ScrollView>
 
                 </View>
+                <Card style={styles.event}>
+                <CardImage source={event}/>
+                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                </Card>
+                <Card style={styles.event}>
+                <CardImage source={event}/>
+                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                </Card>
+                <Card style={styles.event}>
+                <CardImage source={event}/>
+                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                </Card>
+                <Card style={styles.event}>
+                <CardImage source={event}/>
+                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile,
+                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                </Card>
                 <Card style={styles.event}>
                 <CardImage source={event}/>
                 <CardTitle title="This is title" subtitle="This is sub title"/>

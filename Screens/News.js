@@ -7,22 +7,20 @@ import axios from 'axios';
 class News extends Component{
 
     state = {
-        title:'What is the purpose of Title',
-        description:'What is the advantage of Decription'
+        dataList: []
       }
 
     componentDidMount() {
-        axios.get(`url`)
-          .then(res => {
-            const title = res.data;
-            this.setState({ title });
-            const description = res.data;
-            this.setState({ description });
+        axios.get(`http://192.168.43.199:8085/api/user/viewAll`)
+          .then(res => {console.log(res.data)
+            const dataList = res.data;
+            this.setState({ dataList });
           })
           .catch(error => {console.log(error)});
       }
 
     render(){
+        const {dataList} = this.state;
         return(
             <View style={styles.container}>
             <Header style={styles.header}>
@@ -34,15 +32,22 @@ class News extends Component{
                 </Right>
             </Header>
             <ScrollView>
+            {
+                dataList.map(user => 
+            
             <Card style={styles.card} title="Learn More">
             <Button
                 onPress={()=>{}}
-                title={this.state.title}
+                title={user.fName}
                 Color="#fff"
                 accessibilityLabel="Learn more about this purple button"
                 />
-                <Text>{this.state.description}</Text>
+                <Text>{user.lName}</Text>
+                <Text>{user.userEmail}</Text>
+                <Text>{user.cNo}</Text>
+                <Text>{user.userPassword}</Text>
             </Card>
+            ) }
             </ScrollView>
             </View>
         );

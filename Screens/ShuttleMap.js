@@ -78,14 +78,14 @@ class ShuttleMap extends Component{
                         opacity={1.0}
                      />
                 </MapView>
-                <View style={styles.touch}>
+                {/* <View style={styles.touch}>
                 <TouchableOpacity
                 
                   style={[styles.bubble, styles.button]}
                 >
                   <Text>Refresh</Text>
               </TouchableOpacity>
-              </View>
+              </View> */}
                 
             </View>
         );
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
   
       },
       touch:{
-        flexDirection: 'column-reverse',
-        alignItems:'flex-end',
+        // flexDirection: 'column-reverse',
+        // alignItems:'flex-end',
         marginBottom:-5
       },
       map: {

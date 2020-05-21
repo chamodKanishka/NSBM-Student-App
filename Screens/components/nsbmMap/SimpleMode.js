@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet,ScrollView,Dimensions,Image,TouchableOpacity} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 import SearchInput, { createFilter } from 'react-native-search-filter';
-import emails from './Location';
+import location from './Location';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 
@@ -20,8 +20,7 @@ class SimpleMode extends Component{
       
 
     render(){
-        const filteredEmails = emails.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
-
+        const filteredLocations = location.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
         return(
             <View style={styles.container}>
             <Header style={styles.header}>
@@ -42,12 +41,12 @@ class SimpleMode extends Component{
                 placeholder="Type here to search"
                 />
                 <ScrollView>
-                {filteredEmails.map(email => {
+                {filteredLocations.map(location => {
                     return (
-                    <TouchableOpacity onPress={()=>alert(email.location)} key={email.id} style={styles.emailItem}>
+                    <TouchableOpacity onPress={()=>alert(location.location)} key={location.id} style={styles.locationItem}>
                         <View>
-                        <Text>{email.user.name}</Text>
-                        <Text style={styles.emailSubject}>{email.subject}</Text>
+                        <Text>{location.user.name}</Text>
+                        <Text style={styles.Locationsubject}>{location.subject}</Text>
                         </View>
                     </TouchableOpacity>
                     )
@@ -64,12 +63,12 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
     },
-    emailItem:{
+    locationItem:{
         borderBottomWidth: 0.5,
         borderColor: 'rgba(0,0,0,0.3)',
         padding: 10
       },
-      emailSubject: {
+      Locationsubject: {
         color: 'rgba(0,0,0,0.5)'
       },
       searchInput:{
