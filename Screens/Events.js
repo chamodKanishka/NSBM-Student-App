@@ -3,10 +3,26 @@ import{View, Text, StyleSheet, SafeAreaView,TextInput,Platform,StatusBar,ScrollV
 import { Header, Left, Right, Icon} from 'native-base'
 import Category from '../Screens/components/Events/Category';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
-import event from "../images/event.jpg"
+import event from "../images/event.jpg";
+import axios from 'axios';
 const{height,width} = Dimensions.get('window')
 class Events extends Component{
+
+    state = {
+        dataList: []
+      }
+
+    componentDidMount() {
+        axios.get(`http://192.168.43.199:8085/api/user/viewAll`)
+          .then(res => {console.log(res.data)
+            const dataList = res.data;
+            this.setState({ dataList });
+          })
+          .catch(error => {console.log(error)});
+      }
+
     render(){
+        const {dataList} = this.state;
         return(
             <View style={styles.container}>
             <Header style={styles.header}>
@@ -23,71 +39,17 @@ class Events extends Component{
             <View style={{flex:1, backgroundColor:'white',paddingTop:20}}>
                 <Text style={{ fontSize:24, fontWeight:'700',paddingHorizontal:20}}>Events of NSBM
                 </Text>
-                <View style={{height:130, marginTop:20}}>
-                    <ScrollView
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    >
-                       <TouchableOpacity>
-                       <Category imageUri={require('../images/event.jpg')}
-                       name='Firebase(FOSS)'/>
-                       </TouchableOpacity>
-                       <TouchableOpacity>
-                       <Category imageUri={require('../images/nsbm.jpg')}
-                       name='IPT'/>
-                       </TouchableOpacity><TouchableOpacity>
-                       <Category imageUri={require('../images/event.jpg')}
-                       name='NSBM'/>
-                       </TouchableOpacity><TouchableOpacity>
-                       <Category imageUri={require('../images/event.jpg')}
-                       name='NSBM'/>
-                       </TouchableOpacity><TouchableOpacity>
-                       <Category imageUri={require('../images/event.jpg')}
-                       name='NSBM'/>
-                       </TouchableOpacity>
-                    </ScrollView>
-
-                </View>
+                {
+                dataList.map(user =>
                 <Card style={styles.event}>
                 <CardImage source={event}/>
-                <CardTitle title="This is title" subtitle="This is sub title"/>
+                <CardTitle title={user.fName} subtitle={user.lName}/>
                 <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
                 Your Description device will reboot in few seconds once successful, be patient meanwhile,
                 Your Description device will reboot in few seconds once successful, be patient meanwhile,
                 Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
                 </Card>
-                <Card style={styles.event}>
-                <CardImage source={event}/>
-                <CardTitle title="This is title" subtitle="This is sub title"/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
-                </Card>
-                <Card style={styles.event}>
-                <CardImage source={event}/>
-                <CardTitle title="This is title" subtitle="This is sub title"/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
-                </Card>
-                <Card style={styles.event}>
-                <CardImage source={event}/>
-                <CardTitle title="This is title" subtitle="This is sub title"/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
-                </Card>
-                <Card style={styles.event}>
-                <CardImage source={event}/>
-                <CardTitle title="This is title" subtitle="This is sub title"/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
-                </Card>
+                )}
 
             </View>
 
