@@ -37,11 +37,10 @@ class News extends Component{
             
             <Card style={styles.card} title="Learn More">
             <Button
-                onPress={()=>{}}
                 title={user.fName}
                 Color="#fff"
                 accessibilityLabel="Learn more about this purple button"
-                />
+                 />
                 <Text>{user.lName}</Text>
                 <Text>{user.userEmail}</Text>
                 <Text>{user.cNo}</Text>
