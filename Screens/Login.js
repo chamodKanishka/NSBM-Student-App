@@ -23,9 +23,12 @@ class Login extends Component {
             snackIsVisible: false,
         }
     }
-
-
+      
       handleLogin = () => {
+        axios.post(`http://192.168.43.199:8085/api/user/addUser`,{
+            userEmail:this.state.email,
+            userPassword: this.state.password
+        })
           if(this.state.email == "chamod@gmail.com"){
               if(this.state.password == "kanishka"){
                     this.props.navigation.navigate("Menu", {screen:Menu})
