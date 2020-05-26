@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet,ScrollView,Dimensions,Image,TouchableOpacity} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base'
 import SearchInput, { createFilter } from 'react-native-search-filter';
-import location from './Location';
+// import location from './Location';
+import axios from 'axios';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 
@@ -11,16 +12,27 @@ class SimpleMode extends Component{
     constructor(props) {
         super(props);
         this.state = {
-          searchTerm: ''
+          searchTerm: '',
+          dataList: []
         }
       }
       searchUpdated(term) {
         this.setState({ searchTerm: term })
       }
+
+      componentDidMount() {
+        axios.get(`http://192.168.43.199:8083/api/student/localMap`)
+          .then(res => {console.log(res.data)
+            const dataList = res.data;
+            this.setState({ dataList });
+          })
+          .catch(error => {console.log(error)});
+      }
       
 
     render(){
-        const filteredLocations = location.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
+        const {dataList} = this.state;
+        // const filteredLocations = location.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
         return(
             <View style={styles.container}>
             <Header style={styles.header}>
@@ -41,7 +53,7 @@ class SimpleMode extends Component{
                 placeholder="Type here to search"
                 />
                 <ScrollView>
-                {filteredLocations.map(location => {
+                {dataList.map(location => {
                     return (
                     <TouchableOpacity onPress={()=>alert(location.location)} key={location.id} style={styles.locationItem}>
                         <View>

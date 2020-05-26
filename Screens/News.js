@@ -11,7 +11,7 @@ class News extends Component{
       }
 
     componentDidMount() {
-        axios.get(`http://192.168.43.199:8085/api/user/viewAll`)
+        axios.get(`http://192.168.43.199:8085/api/notes/notes/1`)
           .then(res => {console.log(res.data)
             const dataList = res.data;
             this.setState({ dataList });
@@ -37,14 +37,12 @@ class News extends Component{
             
             <Card style={styles.card} title="Learn More">
             <Button
-                title={user.fName}
+                title={user.title}
                 Color="#fff"
                 accessibilityLabel="Learn more about this purple button"
                  />
-                <Text>{user.lName}</Text>
-                <Text>{user.userEmail}</Text>
-                <Text>{user.cNo}</Text>
-                <Text>{user.userPassword}</Text>
+                <Text>{user.subtitle}</Text>
+                <Text>{user.description}</Text>
             </Card>
             ) }
             </ScrollView>

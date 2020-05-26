@@ -5,8 +5,20 @@ import { WebView } from 'react-native-webview';
 
 class ExamTimetable extends Component{
 
+    state= {
+        exam_url:''
+    }
 
+    componentDidMount() {
+        axios.get(`http://192.168.43.199:8083/api/events/events`)
+          .then(res => {console.log(res.data)
+            const exam_url = res.data;
+            this.setState({ exam_url });
+          })
+          .catch(error => {console.log(error)});
+      }
     render(){
+        const {dataList} = this.state;
         return(
             <View style={styles.container}>
                 <Header style={styles.header}>
@@ -18,8 +30,7 @@ class ExamTimetable extends Component{
                     </Right>
                 </Header>
                 <WebView
-                    source = {{ uri:
-                            'https://docs.google.com/spreadsheets/d/1e7z2sxXT1WcK0iH8iQwRUjQpLULEd_tvtO7C1tJ9gFY/edit#gid=806617593' }}
+                    source = {{ uri:{exam_url} }}
                             injectedJavaScript={`const meta = document.createElement('meta'); meta.setAttribute('content', 'width=width, initial-scale=0.8, maximum-scale=0.5, user-scalable=2.0'); meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); `}
                             scalesPageToFit={true}
                             onLoadEnd={this._onLoadEnd}

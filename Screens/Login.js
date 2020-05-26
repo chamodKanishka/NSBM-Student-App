@@ -19,6 +19,7 @@ class Login extends Component {
             press: false,
             email:"",
             password:"",
+            role:'1',
             errorMessage: null,
             snackIsVisible: false,
         }
@@ -27,7 +28,8 @@ class Login extends Component {
       handleLogin = () => {
         axios.post(`http://192.168.43.199:8085/api/user/addUser`,{
             userEmail:this.state.email,
-            userPassword: this.state.password
+            userPassword: this.state.password,
+            userRole: this.state.role
         })
           if(this.state.email == "chamod@gmail.com"){
               if(this.state.password == "kanishka"){

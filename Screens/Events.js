@@ -13,7 +13,7 @@ class Events extends Component{
       }
 
     componentDidMount() {
-        axios.get(`http://192.168.43.199:8085/api/user/viewAll`)
+        axios.get(`http://192.168.43.199:8083/api/events/events`)
           .then(res => {console.log(res.data)
             const dataList = res.data;
             this.setState({ dataList });
@@ -43,11 +43,8 @@ class Events extends Component{
                 dataList.map(user =>
                 <Card style={styles.event}>
                 <CardImage source={event}/>
-                <CardTitle title={user.fName} subtitle={user.lName}/>
-                <CardContent text="Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile,
-                Your Description device will reboot in few seconds once successful, be patient meanwhile"/>
+                <CardTitle title={user.title} subtitle={user.subtitle}/>
+                <CardContent text={user.description}/>
                 </Card>
                 )}
 
