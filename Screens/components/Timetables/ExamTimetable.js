@@ -6,7 +6,7 @@ import { WebView } from 'react-native-webview';
 class ExamTimetable extends Component{
 
     state= {
-        exam_url:''
+        exam_url:'https://google.com'
     }
 
     componentDidMount() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import bgImage from '../images/nsbm1.jpeg'
 import logo from '../images/logosss.png'
@@ -8,61 +8,64 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Icons from 'react-native-vector-icons/AntDesign'
 import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 import Snackbar from 'react-native-snackbar-component';
+import CommonUser from './commonUser';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
 
-    constructor(){
+    constructor() {
         super()
         this.state = {
             showPass: true,
             press: false,
-            userEmail:"",
-            userPassword:"",
-            role:'1',
+            userEmail: "",
+            userPassword: "",
+            role: '1',
             snackIsVisible: false,
         }
     }
-      
-      handleLogin = () => {
+
+    handleLogin = () => {
         console.log(this.state)
-        axios.post(`http://192.168.43.199:8083/api/user/checkUser`,{
-            userEmail:this.state.userEmail,
+        axios.post(`http://192.168.43.199:8083/api/user/checkUser`, {
+            userEmail: this.state.userEmail,
             userPassword: this.state.userPassword,
             userRole: this.state.role
         })
-        .then(res => {
-            console.log(res.data.userEmail);
-            if(res.data.userEmail !== undefined){
-                this.props.navigation.navigate("Menu", {screen:Menu})
+            .then(res => {
+                console.log(res.data.userEmail);
 
-            }
-            else{
-                this.setState({ 
+                if (res.data.userEmail !== undefined) {
+                
+                    CommonUser.email = res.data.userEmail
+                    this.props.navigation.navigate("Menu", { screen: Menu })
+                }
+                else {
+                    this.setState({
+                        snackIsVisible: !this.state.snackIsVisible
+                    });
+                }
+
+            })
+            .catch(error => {
+                this.setState({
                     snackIsVisible: !this.state.snackIsVisible
-                  });
-            }
-
-        })
-        .catch(error => {
-            this.setState({ 
-                snackIsVisible: !this.state.snackIsVisible
-              });
-        });
+                });
+            });
 
         // console.log(this.state.email)
         // console.log(this.state.password)
         //   if(this.state.email == "chamod"){
         //       if(this.state.password == "kanishka"){
         //             this.props.navigation.navigate("Menu", {screen:Menu})
-                    
+
         //       }
         //       else{
         //         this.setState({ 
         //             snackIsVisible: !this.state.snackIsVisible
         //           });
         //       }
-              
+
         //   }
         //   else{
         //     this.setState({ 
@@ -70,19 +73,19 @@ class Login extends Component {
         //       });
         //   }
 
-    
-      };
+
+    };
 
 
     showPass = () => {
-        if(this.state.press == false) {
-            this.setState({ showPass: false, press: true})
+        if (this.state.press == false) {
+            this.setState({ showPass: false, press: true })
         }
         else {
-            this.setState({ showPass: true, press : false})
+            this.setState({ showPass: true, press: false })
         }
     }
-    
+
     render() {
         return (
             <ImageBackground source={bgImage} style={styles.mainContainer}>
@@ -92,27 +95,27 @@ class Login extends Component {
                 </View>
                 <View style={styles.inputContainer}>
                     <Icons name={'user'} size={24} color={'rgba(0,0,0,1)'}
-                     style={styles.inputIcon}></Icons>
+                        style={styles.inputIcon}></Icons>
                     <TextInput
                         style={styles.input}
                         placeholder={'Email'}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
                         keyboardType="email-address"
-                        onChangeText={userEmail => this.setState({userEmail})}
+                        onChangeText={userEmail => this.setState({ userEmail })}
                         value={this.state.userEmail}
                     />
                 </View>
                 <View style={styles.inputContainer}>
-                <Iconsi name={'textbox-password'} size={24} color={'rgba(0,0,0,1)'}
-                     style={styles.inputIcon}></Iconsi>
+                    <Iconsi name={'textbox-password'} size={24} color={'rgba(0,0,0,1)'}
+                        style={styles.inputIcon}></Iconsi>
                     <TextInput
                         style={styles.input}
                         placeholder={'Password'}
                         secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
-                        onChangeText={userPassword => this.setState({userPassword})}
+                        onChangeText={userPassword => this.setState({ userPassword })}
                         value={this.state.userPassword}
                     />
 
@@ -125,22 +128,22 @@ class Login extends Component {
                     <Text style={styles.text}>Login</Text>
                 </TouchableOpacity>
                 <Snackbar
-                visible={this.state.snackIsVisible}
-                //SnackBar visibility control
-                textMessage="Your email or password incorrect"
-                //Text on SnackBar
-                actionHandler={() => {
-                    //After handling click making nackBar invisible
-                    this.setState({ 
-                    snackIsVisible: !this.state.snackIsVisible 
-                    });
-                }}
-                actionText="try again"
-                //action Text to print on SnackBar
-                distanceCallback={distance => {
-                    //Number indicating distance taken up by snackbar
-                    this.setState({ distance: distance });
-                }}
+                    visible={this.state.snackIsVisible}
+                    //SnackBar visibility control
+                    textMessage="Your email or password incorrect"
+                    //Text on SnackBar
+                    actionHandler={() => {
+                        //After handling click making nackBar invisible
+                        this.setState({
+                            snackIsVisible: !this.state.snackIsVisible
+                        });
+                    }}
+                    actionText="try again"
+                    //action Text to print on SnackBar
+                    distanceCallback={distance => {
+                        //Number indicating distance taken up by snackbar
+                        this.setState({ distance: distance });
+                    }}
                 />
             </ImageBackground>
         );
@@ -149,7 +152,7 @@ class Login extends Component {
 export default Login;
 
 const styles = StyleSheet.create({
-    imgcont:{
+    imgcont: {
         backgroundColor: 'rgba(0,0,0,0.5)'
     },
     mainContainer: {
@@ -176,14 +179,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
         opacity: 1
     },
-    inputContainer:{
+    inputContainer: {
         marginTop: 10
 
     },
-    inputIcon:{
+    inputIcon: {
         position: 'absolute',
-        top:8,
-        left:40
+        top: 8,
+        left: 40
 
     },
     input: {
@@ -198,23 +201,23 @@ const styles = StyleSheet.create({
 
     },
 
-    btnLogin:{
+    btnLogin: {
         width: WIDTH - 55,
         height: 45,
         borderRadius: 25,
         backgroundColor: '#007aff',
         justifyContent: 'center',
-        marginTop:20,
-        
+        marginTop: 20,
+
     },
-    text:{
+    text: {
         color: 'rgba(255,255,255,1)',
-        fontSize:20,
+        fontSize: 20,
         textAlign: 'center'
 
     },
-    btnEye:{
-        position:'absolute',
+    btnEye: {
+        position: 'absolute',
         top: 8,
         right: 37
     }

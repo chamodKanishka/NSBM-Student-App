@@ -11,7 +11,7 @@ class News extends Component{
       }
 
     componentDidMount() {
-        axios.get(`http://192.168.43.199:8085/api/notes/notes/1`)
+        axios.get(`http://192.168.43.199:8083/api/notes/notes/1`)
           .then(res => {console.log(res.data)
             const dataList = res.data;
             this.setState({ dataList });
