@@ -17,38 +17,58 @@ class Login extends Component {
         this.state = {
             showPass: true,
             press: false,
-            email:"",
-            password:"",
+            userEmail:"",
+            userPassword:"",
             role:'1',
-            errorMessage: null,
             snackIsVisible: false,
         }
     }
       
       handleLogin = () => {
-        axios.post(`http://192.168.43.199:8085/api/user/addUser`,{
-            userEmail:this.state.email,
-            userPassword: this.state.password,
+        console.log(this.state)
+        axios.post(`http://192.168.43.199:8083/api/user/checkUser`,{
+            userEmail:this.state.userEmail,
+            userPassword: this.state.userPassword,
             userRole: this.state.role
         })
-          if(this.state.email == "chamod@gmail.com"){
-              if(this.state.password == "kanishka"){
-                    this.props.navigation.navigate("Menu", {screen:Menu})
-                    console.log(this.state.email)
-                    console.log(this.state.password)
-              }
-              else{
+        .then(res => {
+            console.log(res.data.userEmail);
+            if(res.data.userEmail !== undefined){
+                this.props.navigation.navigate("Menu", {screen:Menu})
+
+            }
+            else{
                 this.setState({ 
                     snackIsVisible: !this.state.snackIsVisible
                   });
-              }
-              
-          }
-          else{
+            }
+
+        })
+        .catch(error => {
             this.setState({ 
                 snackIsVisible: !this.state.snackIsVisible
               });
-          }
+        });
+
+        // console.log(this.state.email)
+        // console.log(this.state.password)
+        //   if(this.state.email == "chamod"){
+        //       if(this.state.password == "kanishka"){
+        //             this.props.navigation.navigate("Menu", {screen:Menu})
+                    
+        //       }
+        //       else{
+        //         this.setState({ 
+        //             snackIsVisible: !this.state.snackIsVisible
+        //           });
+        //       }
+              
+        //   }
+        //   else{
+        //     this.setState({ 
+        //         snackIsVisible: !this.state.snackIsVisible
+        //       });
+        //   }
 
     
       };
@@ -79,8 +99,8 @@ class Login extends Component {
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
                         keyboardType="email-address"
-                        onChangeText={email => this.setState({email})}
-                        value={this.state.email}
+                        onChangeText={userEmail => this.setState({userEmail})}
+                        value={this.state.userEmail}
                     />
                 </View>
                 <View style={styles.inputContainer}>
@@ -92,8 +112,8 @@ class Login extends Component {
                         secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
-                        onChangeText={password => this.setState({password})}
-                        value={this.state.password}
+                        onChangeText={userPassword => this.setState({userPassword})}
+                        value={this.state.userPassword}
                     />
 
                     <TouchableOpacity style={styles.btnEye}

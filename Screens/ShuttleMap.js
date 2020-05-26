@@ -3,7 +3,8 @@ import{View, Text, StyleSheet, PermissionsAndroid, Button, BackHandler, DeviceEv
 import { Header, Left, Right, Icon} from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LightMap from "./components/mapColor/lightmap"
-import DarkMap from "./components/mapColor/darkmap"
+import DarkMap from "./components/mapColor/darkmap";
+import axios from 'axios';
 import Logo from '../images/logoss.png'
 
 
@@ -33,11 +34,26 @@ async function requestLocationPermission() {
 
 
 class ShuttleMap extends Component{
+
+  state = {
+    dataList: []
+  }
+  
+  componentDidMount() {
+    axios.get(`http://192.168.43.199:8083/api/driver/drivers`)
+      .then(res => {console.log(res.data)
+        const dataList = res.data;
+        this.setState({ dataList });
+      })
+      .catch(error => {console.log(error)});
+  }
+
     async componentDidMount(){
         await requestLocationPermission()
     }
     
     render(){
+      const {dataList} = this.state;
         return(
             <View style={styles.container}>
                 <Header style={styles.header}>
@@ -77,6 +93,20 @@ class ShuttleMap extends Component{
                         rotation={0}
                         opacity={1.0}
                      />
+
+            {
+                dataList.map(user =>
+                  <Marker
+                        title={"Shuttles"}
+                        coordinate={{
+                            latitude:user.latitude,
+                            longitude:user.longitude,
+                        }}
+                        pinColor={"red"}
+                        rotation={0}
+                        opacity={1.0}
+                     />
+                     )}
                 </MapView>
                 {/* <View style={styles.touch}>
                 <TouchableOpacity

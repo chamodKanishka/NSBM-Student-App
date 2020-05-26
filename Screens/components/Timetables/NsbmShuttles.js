@@ -2,15 +2,25 @@ import React, { Component } from "react";
 import{View, Text, StyleSheet, ScrollView} from "react-native";
 import { Header, Left, Right, Icon} from 'native-base';
 import { Table, TableWrapper, Row } from 'react-native-table-component';
-
+import axios from 'axios';
 class NsbmShuttles extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
           tableHead: ['NSBM To Makumbura', 'Makubura to NSBM'],
-          widthArr: [ 170, 170]
+          widthArr: [ 170, 170],
+          dataList: []
         }
+      }
+
+      componentDidMount() {
+        axios.get(`http://192.168.43.199:8083/api/events/events`)
+          .then(res => {console.log(res.data)
+            const dataList = res.data;
+            this.setState({ dataList });
+          })
+          .catch(error => {console.log(error)});
       }
 
     render(){
