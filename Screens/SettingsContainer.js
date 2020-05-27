@@ -75,6 +75,23 @@ QrcodeScanner: {
           },
     },
 },
+
+Login: {
+  screen: Login,
+  navigationOptions: {  // Extra Navigation Options
+    headerShown: false,  //Make the header bar Null - No Header
+    gestureEnabled: false,
+      title: 'Logout',
+      headerStyle: {
+          backgroundColor: '#2879fe',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize:24,
+        },
+  },
+},
   
 
 });

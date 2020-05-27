@@ -15,6 +15,7 @@ import Profile from "./Profile";
 import MyEid from './components/Settings/MyEid';
 import QrcodeScanner from './components/Settings/QrcodeScanner';
 import Login from './Login';
+import CommonUser from "./commonUser";
 // import { NavigationContainer } from '@react-navigation/native';
 // import QrcodeScanner from "./components/Settings/QrcodeScanner";
 
@@ -51,6 +52,11 @@ class SettingsScreen extends Component{
     navigateToLogout = () => {
         const {} = this.props.navigation.navigate
         ('Login', {screen:Login});
+        console.log('login')
+        CommonUser.user = undefined;
+
+        CommonUser.student = undefined;
+        
     }
     
     render(){

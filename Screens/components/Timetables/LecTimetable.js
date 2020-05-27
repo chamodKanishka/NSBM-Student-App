@@ -14,10 +14,10 @@ class LecTimetable extends Component {
     lec_url = ''
 
     componentDidMount() {
-        axios.get(`http://192.168.43.199:8083/api/student/student/` + CommonUser.email)
+        axios.get(`http://192.168.43.199:8083/api/student/student/` + CommonUser.user.userEmail)
             .then(res => {
 
-                this.lec_url=res.data.docUrl.url.examUrl
+                this.lec_url=res.data.docUrl.url.lecUrl
                 const lec_url = res.data;
                 this.setState({ lec_url });
             })

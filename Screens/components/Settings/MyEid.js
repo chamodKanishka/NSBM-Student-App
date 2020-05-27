@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import QRCode from 'react-native-qrcode2';
+import CommonUser from "../../commonUser";
 import {
     AppRegistry,
     StyleSheet,
@@ -11,7 +12,7 @@ import {
 
 class MyEid extends Component{
     state = {
-        text: '10018507',
+        text: CommonUser.student.sId,
     };
 
     render(){

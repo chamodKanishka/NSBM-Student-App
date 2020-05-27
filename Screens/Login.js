@@ -33,11 +33,10 @@ class Login extends Component {
             userRole: this.state.role
         })
             .then(res => {
-                console.log(res.data.userEmail);
 
                 if (res.data.userEmail !== undefined) {
                 
-                    CommonUser.email = res.data.userEmail
+                    CommonUser.user = res.data
                     this.props.navigation.navigate("Menu", { screen: Menu })
                 }
                 else {
@@ -46,33 +45,18 @@ class Login extends Component {
                     });
                 }
 
+                axios.get(`http://192.168.43.199:8083/api/student/student/` + CommonUser.user.userEmail)
+                .then(res => {
+                    CommonUser.student = res.data;
+                })
+                .catch(error => { console.log(error) });
+
             })
             .catch(error => {
                 this.setState({
                     snackIsVisible: !this.state.snackIsVisible
                 });
             });
-
-        // console.log(this.state.email)
-        // console.log(this.state.password)
-        //   if(this.state.email == "chamod"){
-        //       if(this.state.password == "kanishka"){
-        //             this.props.navigation.navigate("Menu", {screen:Menu})
-
-        //       }
-        //       else{
-        //         this.setState({ 
-        //             snackIsVisible: !this.state.snackIsVisible
-        //           });
-        //       }
-
-        //   }
-        //   else{
-        //     this.setState({ 
-        //         snackIsVisible: !this.state.snackIsVisible
-        //       });
-        //   }
-
 
     };
 

@@ -4,7 +4,8 @@ import { Header, Left, Right,Center, Icon} from 'native-base'
 import PhotoUpload from "react-native-photo-upload";
 import  Icons  from 'react-native-vector-icons/Ionicons'
 import SettingsScreen from "./SettingsScreen";
-
+import CommonUser from "./commonUser";
+import axios from 'axios';
 
 async function requestCameraPermission() {
     try {
@@ -34,12 +35,21 @@ async function requestCameraPermission() {
 class Profile extends Component{
 
     state = {
-        name:'Chathuranga Nanayakkara',
-        email:'nwvckchathuranga@students.nsbm.lk',
-        degree:'SE(Plymouth)',
-        batch:'17.1'
+        profileData:[],
+        
 
     }
+    componentDidMount() {
+        // axios.get(`http://192.168.43.199:8083/api/student/student/ch@gmail.com`)
+        //   .then(res => {
+        //     // this.exam_url=res.data.docUrl.url.examUrl
+        //     const name = res.data;
+        //     this.setState({ name });
+        //     console.log(res.data)
+        //   })
+        //   .catch(error => {console.log(error)});
+      }
+
     async componentDidMount(){
         await requestCameraPermission()
     }
@@ -71,10 +81,10 @@ class Profile extends Component{
                  </PhotoUpload>
                 </View>
                 <View style={{marginLeft:20,}}>
-                        <Text style={styles.label}>Name:    {this.state.name}</Text>
-                <Text style={styles.label}>Email:   {this.state.email}</Text>
-                        <Text style={styles.label}>Degree:  {this.state.degree}</Text>
-                        <Text style={styles.label}>Batch:   {this.state.batch}</Text>
+                        <Text style={styles.label}>Name:    {CommonUser.student.name}</Text>
+                         <Text style={styles.label}>Email:   {CommonUser.student.email}</Text>
+                        <Text style={styles.label}>Degree:  {CommonUser.student.degree}</Text>
+                        <Text style={styles.label}>Batch:   {CommonUser.student.batch}</Text>
             </View>
             </View>
         );
