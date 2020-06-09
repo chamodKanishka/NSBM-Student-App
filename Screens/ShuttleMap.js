@@ -48,9 +48,9 @@ class ShuttleMap extends Component{
       .catch(error => {console.log(error)});
   }
 
-    async componentDidMount(){
-        await requestLocationPermission()
-    }
+    // async componentDidMount(){
+    //     await requestLocationPermission()
+    // }
     
     render(){
       const {dataList} = this.state;
@@ -100,7 +100,7 @@ class ShuttleMap extends Component{
                         title={"Shuttles"}
                         coordinate={{
                             latitude:user.latitude,
-                            longitude:user.longitude,
+                            longitude:user.longitude
                         }}
                         pinColor={"red"}
                         rotation={0}
@@ -108,6 +108,14 @@ class ShuttleMap extends Component{
                      />
                      )}
                 </MapView>
+                {/* {
+                  dataList.map(user =>
+                    <View> 
+                  <Text>{user.latitude}</Text>
+                  <Text>{user.longitude}</Text>
+                   </View>
+                  )} */}
+                
                 {/* <View style={styles.touch}>
                 <TouchableOpacity
                 
